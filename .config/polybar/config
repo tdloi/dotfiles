@@ -1,0 +1,177 @@
+[colors]
+background = #21252b
+foreground = #dfdfdf
+black = #555
+black-alt = #333
+green = #55aa55
+green-alt = #89ca78
+red = #FC3C3C
+orange = #f5a70a
+
+[bar/tdloi]
+bottom = true
+monitor = ${env:MONITOR:LVDS1}
+width = 100%
+height = 16
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+padding-left = 2
+padding-right = 0
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = dina:pixelsize=10;2
+font-1 = Ionicons:size=10;2
+font-2 = "HanaMinA:size=10;2"
+font-3 = Ionicons:size=9;2
+
+modules-left =
+modules-center = xwindow
+modules-right = alsa memory cpu aur wlan eth battery date
+
+;Disable system tray
+tray-position =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+; https://github.com/jaagr/polybar/wiki/Inter-process-messaging
+enable-ipc = true
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label-maxlen = 80
+label-font = 3
+
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <bar-volume> <label-volume>
+format-volume-prefix = " "
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground}
+format-muted-prefix = " "
+format-muted-foreground = ${colors.black}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #c6d3c6
+bar-volume-foreground-1 = #c6d3c6
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.green}
+bar-volume-foreground-6 = ${colors.green}
+bar-volume-foreground-7 = ${colors.green}
+bar-volume-foreground-8 = ${colors.orange}
+bar-volume-foreground-9 = ${colors.orange}
+bar-volume-foreground-10 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-fill = 
+bar-volume-empty = 
+bar-volume-empty-foreground = ${colors.black}
+
+
+[module/memory]
+type = internal/memory
+label = RAM %percentage_used%%
+
+
+[module/cpu]
+type = internal/cpu
+label = CPU %percentage:2%%
+
+
+[module/aur]
+type = custom/script
+exec = ~/.config/polybar/script/aur.sh
+label-online =  %output%
+label-offline = !
+format-prefix = " "
+interval = 1800
+click-left = ~/.config/polybar/script/aur-push.sh
+
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+ramp-signal-0 = 
+label-connected = %essid%
+
+format-disconnected = Wifi disconnected
+format-disconnected-foreground = ${colors.black}
+
+
+[module/eth]
+type = internal/network
+interface = enp4s0f2
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.black}
+label-connected = %local_ip%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 97
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-full-prefix = " "
+format-full-prefix-font = 5
+format-full-prefix-foreground = ${colors.green-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-font = 5
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.orange}
+ramp-capacity-foreground = ${colors.green-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-font = 5
+animation-charging-foreground = ${colors.green-alt}
+animation-charging-framerate = 750
+
+
+[module/date]
+type = internal/date
+interval = 1
+
+label = %date% %time%
+label-foreground = ${colors.black-alt}
+label-background = ${colors.green}
+label-padding-right = 1
+
+;date =
+time = %a %H:%M
+date-alt = " %d-%m-%y"
+time-alt = %H:%M:%S
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0

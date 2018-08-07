@@ -1,0 +1,17 @@
+[profiles]
+terminal-title='『　』'
+visible-name='Default'
+
+[keybindings]
+app-preferences='F1'
+session-add-down='<Primary><Shift>d'
+
+[/]
+sidebar-on-right=false
+terminal-title-style='none'
+prompt-on-close-process=false
+theme-variant='dark'
+control-scroll-zoom=true
+app-title='『　　　』'
+warn-vte-config-issue=false
+window-style='disable-csd-hide-toolbar'

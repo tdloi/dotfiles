@@ -1,0 +1,37 @@
+/* /* Frank edited file - you are good to go...*/
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/* Hide firefox and settings button on homepage */
+button#onboarding-overlay-button.onboarding-watermark,
+.body-wrapper div.prefs-button button.icon.icon-settings {
+  display: none !important;
+}
+
+@-moz-document domain(duckduckgo.com) {
+  /* Homepage */
+  .badge-link.badge-link--top.badge-link--fadein.ddg-extension-hide.js-badge-link {
+    display: none;
+  }
+
+  /* Search layout */
+  .cw, .cw--c {
+    max-width: none !important;
+  }
+  .results--main {
+    max-width: 60% !important;
+    padding-right: 2% !important;
+  }
+
+  /* Header */
+  .header--aside__item {
+    display: none !important;
+  }
+  .zcm__item:not(:last-child) {
+    margin-right: 1.5em !important;
+  }
+
+  /* Feedback button */
+  .serp__bottom-right.js-serp-bottom-right {
+    display: none !important;
+  }
+}

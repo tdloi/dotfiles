@@ -1,0 +1,108 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "code-runner.enableAppInsights": false,
+
+    "window.titleBarStyle": "custom",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.colorCustomizations": {
+        "editorIndentGuide.activeBackground": "#55aa55",
+    },
+    "workbench.startupEditor": "none",
+    "workbench.panel.defaultLocation": "right",
+    "workbench.statusBar.feedback.visible": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/venv": true,
+    },
+    "explorer.openEditors.visible": 7,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.letterSpacing": 1,
+
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [ 80, 100, 120 ],
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "Fantasque Sans Mono",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "500",
+
+    // code-runner
+    "code-runner.runInTerminal": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.temporaryFileName": "_",
+
+    // vim settings
+    "vim.startInInsertMode": true,
+    "vim.overrideCopy": false,
+    "vim.useCtrlKeys": false,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-v>": true
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "leader", "g", "j" ],
+            "commands": [ "workbench.action.focusBelowGroup", ]
+        },
+        {
+            "before": [ "leader", "g", "l" ],
+            "commands": [ "workbench.action.focusRightGroup", ]
+        },
+        {
+            "before": [ "leader", "g", "h" ],
+            "commands": [ "workbench.action.focusLeftGroup", ]
+        },
+        {
+            "before": [ "leader", "g", "k" ],
+            "commands": [ "workbench.action.focusAboveGroup", ]
+        },
+        {
+            "before": [ "leader", "s", "s" ],
+            "commands": [ "workbench.action.splitEditor", ]
+        },
+        {
+            "before": [ "leader", "s", "g" ],
+            "commands": [ "workbench.action.editorLayoutTwoByTwoGrid", ]
+        },
+        {
+            "before": [ "leader", "s", "j" ],
+            "commands": [ "workbench.action.splitEditorDown", ]
+        },
+        {
+            "before": [ "leader", "s", "h" ],
+            "commands": [ "workbench.action.splitEditorLeft", ]
+        },
+        {
+            "before": [ "leader", "s", "l" ],
+            "commands": [ "workbench.action.splitEditorRight", ]
+        },
+        {
+            "before": [ "leader", "s", "k" ],
+            "commands": [ "workbench.action.splitEditorUp", ]
+        },
+        {
+            "before": [ ";" ],
+            "commands": [ "workbench.action.showCommands", ]
+        },
+        {
+            "before": [ "leader", "f", "e" ],
+            "commands": [ "workbench.files.action.focusFilesExplorer", ]
+        },
+        {
+            "before": [ "leader", "f", "o" ],
+            "commands": [ "outline.focus", ]
+        },
+    ],
+
+    // gitlens
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.keymap": "none",
+}
