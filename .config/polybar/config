@@ -31,7 +31,7 @@ font-1 = Ionicons:size=10;2
 font-2 = "HanaMinA:size=10;2"
 font-3 = Ionicons:size=9;2
 
-modules-left =
+modules-left = cmus-previous cmus-next cmus
 modules-center = xwindow
 modules-right = alsa memory cpu aur wlan eth battery date
 
@@ -43,6 +43,29 @@ cursor-scroll = ns-resize
 
 ; https://github.com/jaagr/polybar/wiki/Inter-process-messaging
 enable-ipc = true
+
+
+[module/cmus-previous]
+type = custom/script
+exec = echo "<"
+exec-if = cmus-remote -Q
+click-left = cmus-remote -r
+interval = 1
+
+[module/cmus-next]
+type = custom/script
+exec = echo ">"
+exec-if = cmus-remote -Q
+click-left = cmus-remote -n
+interval = 1
+
+[module/cmus]
+type = custom/script
+exec = if [[ $(cmus-remote -Q | grep 'paused') ]]; then echo "paused"; else cmus-remote -Q | grep 'file' | awk -F/ '{print $NF}'; fi
+exec-if = cmus-remote -Q
+click-left = if [[ $(cmus-remote -Q | grep 'playing') ]]; then cmus-remote -u; else cmus-remote -p; fi
+interval = 1
+
 
 [module/xwindow]
 type = internal/xwindow
