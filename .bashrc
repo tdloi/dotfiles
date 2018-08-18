@@ -24,12 +24,13 @@ fi
 
 # Custom script
 if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH";
+    export PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
 # Alias
-alias pacman='sudo pacman'
-alias aur='rm rf * && git reset --hard HEAD && git pull'
+alias Syu='sudo pacman -Syu'
+alias aur='rm -rf * && git reset --hard HEAD && git pull'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias df='df -h'
