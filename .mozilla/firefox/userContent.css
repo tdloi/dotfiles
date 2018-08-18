@@ -35,3 +35,9 @@ button#onboarding-overlay-button.onboarding-watermark,
     display: none !important;
   }
 }
+
+@-moz-document domain(trello.com) {
+  .home-container .all-boards .boards-page-board-section-list-item {
+    width: 33% !important;
+  }
+}
