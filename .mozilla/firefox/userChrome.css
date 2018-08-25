@@ -53,9 +53,16 @@
    display: none;
  }
 
- /* Hide HTTPS label (company identity) */
- #identity-box:not(:hover) > #identity-icon-labels {
+
+ /* Hide option in identify (HTTPS) box
+  */
+/* HTTPS label (company identity) */
+#identity-box.verifiedIdentity:not(:hover) > #identity-icon-labels {
    display: none;
+ }
+ /* Red box on non-secure connection */
+ #identity-box.notSecure {
+   color: red;
  }
 
 
