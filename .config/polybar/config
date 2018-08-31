@@ -33,7 +33,7 @@ font-3 = Ionicons:size=9;2
 
 modules-left = cmus-previous cmus-next cmus
 modules-center = xwindow
-modules-right = alsa memory cpu aur wlan eth battery date
+modules-right = alsa memory cpu wlan eth battery date
 
 ;Disable system tray
 tray-position =
@@ -112,16 +112,6 @@ label = RAM %percentage_used%%
 [module/cpu]
 type = internal/cpu
 label = CPU %percentage:2%%
-
-
-[module/aur]
-type = custom/script
-exec = ~/.config/polybar/script/aur.sh
-label-online =  %output%
-label-offline = !
-format-prefix = " "
-interval = 1800
-click-left = ~/.config/polybar/script/aur-push.sh
 
 
 [module/wlan]
