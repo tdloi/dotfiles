@@ -61,7 +61,7 @@ interval = 1
 
 [module/cmus]
 type = custom/script
-exec = if cmus-remote -Q | grep -q 'paused'; then echo "paused"; else cmus-remote -Q | grep 'file' | awk -F/ '{print $NF}'; fi
+exec = ~/.config/polybar/script/cmus.py
 exec-if = cmus-remote -Q
 click-left = if cmus-remote -Q | grep -q 'playing'; then cmus-remote -u; else cmus-remote -p; fi
 interval = 1
