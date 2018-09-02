@@ -12,7 +12,9 @@ output = proc.stdout.readlines()
 # Convert byte to string
 output = [_.decode('utf-8') for _ in output]
 
-if 'paused' in output[0]:
+if 'stopped' in output[0]:
+    print('stopped')
+elif 'paused' in output[0]:
     print('paused')
 else:
     name, duration, current = output[1:4]
