@@ -28,8 +28,8 @@ module-margin-right = 1
 
 font-0 = dina:pixelsize=10;2
 font-1 = Ionicons:size=10;2
-font-2 = "HanaMinA:size=10;2"
-font-3 = Ionicons:size=9;2
+font-2 = HanaMinA:size=10;2
+font-3 = Ionicons:size=12;3
 
 modules-left = cmus-previous cmus-next cmus
 modules-center = xwindow
@@ -78,10 +78,10 @@ label-font = 3
 type = internal/alsa
 
 format-volume = <bar-volume> <label-volume>
-format-volume-prefix = " "
+format-volume-prefix = " "
 label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
-format-muted-prefix = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.black}
 label-muted = sound muted
 
@@ -99,8 +99,8 @@ bar-volume-foreground-9 = ${colors.orange}
 bar-volume-foreground-10 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-fill = 
-bar-volume-empty = 
+bar-volume-fill = 
+bar-volume-empty = 
 bar-volume-empty-foreground = ${colors.black}
 
 
@@ -120,7 +120,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-ramp-signal-0 = 
+ramp-signal-0 = 
 label-connected = %essid%
 
 format-disconnected = Wifi disconnected
@@ -146,26 +146,21 @@ full-at = 97
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " "
-format-full-prefix-font = 5
-format-full-prefix-foreground = ${colors.green-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = #77C990
+format-full-prefix-font = 4
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-font = 5
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.orange}
 ramp-capacity-foreground = ${colors.green-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-font = 5
+animation-charging-0 = 
 animation-charging-foreground = ${colors.green-alt}
-animation-charging-framerate = 750
+animation-charging-font = 4
 
 
 [module/date]
