@@ -41,3 +41,15 @@ button#onboarding-overlay-button.onboarding-watermark,
     width: 33% !important;
   }
 }
+
+@-moz-document domain(news.ycombinator.com) {
+  .title,.pagetop { font-size: 11pt !important; }
+  .comment { font-size: 10pt !important; }
+
+  .yclinks, .comhead { font-size: 9pt !important; }
+  .subtext { font-size: 8pt !important; }
+
+  .spacer {
+    height: 8px !important;
+  }
+}

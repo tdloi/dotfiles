@@ -46,6 +46,7 @@
  #pageAction-panel-copyURL,
  #pageAction-panel-screenshots,
  #pageAction-panel-screenshots + toolbarseparator,
+ #pageAction-urlbar-webcompat-reporter_mozilla_org,
  #pageAction-panel-webcompat-reporter-button,
  #pageAction-panel-webcompat-reporter-button + toolbarseparator {
    display: none;
@@ -174,10 +175,10 @@
   margin-bottom: -32px !important;
 }
 /* Fix blank space when moving tab
-   Source: https://www.reddit.com/r/FirefoxCSS/comments/8w5ynu/how_to_get_rid_of_this_animation_when_dragging/e1t8vka/ */
+   Source: https://www.reddit.com/r/FirefoxCSS/comments/8w5ynu/how_to_get_rid_of_this_animation_when_dragging/e1t8vka/
+ */
 #TabsToolbar[movingtab] {
   padding-bottom: 0 !important;
-  /* overflow: hidden !important; */
 }
 #TabsToolbar[movingtab] > .tabbrowser-tabs {
   padding-bottom: 0 !important;
