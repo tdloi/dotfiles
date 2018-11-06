@@ -21,7 +21,7 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-padding-left = 2
+padding-left = 1
 padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
@@ -31,7 +31,7 @@ font-1 = Ionicons:size=10;2
 font-2 = HanaMinA:size=10;2
 font-3 = Ionicons:size=12;3
 
-modules-left = cmus-previous cmus-next cmus
+modules-left = vpn cmus-previous cmus-next cmus
 modules-center = xwindow
 modules-right = alsa memory cpu wlan eth battery date
 
@@ -43,6 +43,13 @@ cursor-scroll = ns-resize
 
 ; https://github.com/jaagr/polybar/wiki/Inter-process-messaging
 enable-ipc = true
+
+
+[module/vpn]
+type = custom/script
+exec = curl -s https://am.i.mullvad.net/json | jq '.country'
+# exec = curl -s https://am.i.mullvad.net/json | jq '[.city, .country] | join(" ")'
+interval = 2
 
 
 [module/cmus-previous]
