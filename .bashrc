@@ -68,6 +68,10 @@ alias py='python'
 alias pips='pipenv shell'
 alias venv='source venv/bin/activate'
 
+# Wireguard
+alias wgu='wg-quick up'
+alias wgd='wg-quick down'
+
 # docker
 alias d='sudo docker'
 alias dc='sudo docker-compose'
