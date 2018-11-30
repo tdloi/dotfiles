@@ -47,9 +47,8 @@ enable-ipc = true
 
 [module/vpn]
 type = custom/script
-exec = curl -s https://am.i.mullvad.net/json | jq '.country'
-# exec = curl -s https://am.i.mullvad.net/json | jq '[.city, .country] | join(" ")'
-interval = 2
+exec =  if [ "$(curl -s https://am.i.mullvad.net/json | jq '.country')" != "\"My Country\"" ]; then curl -s https://am.i.mullvad.net/json | jq '.country'; else echo ''; fi;
+interval = 5
 
 
 [module/cmus-previous]
