@@ -42,6 +42,8 @@ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
 # docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
+# GPG
+export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
 
 # Custom script
 if [ -d "$HOME/.local/bin" ] ; then
@@ -61,22 +63,22 @@ alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias df='df -h'
 alias vol="amixer sget Master | awk -F'[][]' '/dB/ { print \$2 }'"
-alias nano='vim'
 
 # python
 alias py='python'
 alias pips='pipenv shell'
 alias venv='source venv/bin/activate'
 
-# Wireguard
-alias wgu='wg-quick up'
-alias wgd='wg-quick down'
-
 # docker
 alias d='sudo docker'
 alias dc='sudo docker-compose'
+alias d-clean='d rmi $(d images -q --filter "dangling=true")'
 
 # git
-alias gcp='git-commit.py'
+alias g-c='git-commit.py'
 
 alias dbeaver='dbeaver -data $XDG_CONFIG_HOME/dbeaver'
+
+# WireGuard
+alias wgu='wg-quick up'
+alias wgd='wg-quick down $(wg show interfaces)'
