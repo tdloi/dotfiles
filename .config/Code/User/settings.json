@@ -2,8 +2,11 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "code-runner.enableAppInsights": false,
+    "gitlens.advanced.telemetry.enabled": false,
 
     "window.titleBarStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "update.enableWindowsBackgroundUpdates": false,
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.colorCustomizations": {
@@ -31,11 +34,14 @@
     "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
+    "editor.codeLens": false,
 
     // code-runner
     "code-runner.runInTerminal": true,
     "code-runner.fileDirectoryAsCwd": true,
-    "code-runner.temporaryFileName": "_",
+    "code-runner.temporaryFileName": "___",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.ignoreSelection": true,
 
     // vim settings
     "vim.startInInsertMode": true,
@@ -87,6 +93,10 @@
             "commands": [ "workbench.action.splitEditorUp", ]
         },
         {
+            "before": [ ":" ],
+            "commands": [ "workbench.action.showCommands", ]
+        },
+        {
             "before": [ ";" ],
             "commands": [ "workbench.action.showCommands", ]
         },
@@ -105,4 +115,10 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.keymap": "none",
+
+    // python
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/bin/python3",
+    "python.unitTest.debugPort": 5999,
+
 }
