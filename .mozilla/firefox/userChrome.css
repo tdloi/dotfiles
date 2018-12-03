@@ -16,6 +16,8 @@
 
 /* Hide options from hamburger menu
  */
+#appMenu-tp-label,
+#appMenu-tp-separator,
 #appMenu-mainView #appMenuRestoreLastSession,
 #appMenu-mainView #appMenu-zoom-controls,
 #appMenu-mainView #appMenu-zoom-controls + toolbarseparator,
