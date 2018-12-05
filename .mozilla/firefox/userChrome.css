@@ -16,7 +16,7 @@
 
 /* Hide options from hamburger menu
  */
-#appMenu-tp-label,
+#appMenu-tp-button,
 #appMenu-tp-separator,
 #appMenu-mainView #appMenuRestoreLastSession,
 #appMenu-mainView #appMenu-zoom-controls,
@@ -27,7 +27,7 @@
 #appMenu-mainView #appMenu-open-file-button,
 #appMenu-mainView #appMenu-save-file-button,
 #appMenu-mainView #appMenu-more-button,
-#appMenu-mainView #appMenu-developer-button,
+/* #appMenu-mainView #appMenu-developer-button, */
 #appMenu-mainView #appMenu-print-button,
 #appMenu-mainView #appMenu-print-button + toolbarseparator {
   display: none;
@@ -35,11 +35,13 @@
 
 
 /* Hide options in address bar
+ * Remove #pageActionButton when need to add a search engine into firefox
  */
  .urlbar-history-dropmarker,
  #urlbar:hover > .urlbar-textbox-container > .urlbar-history-dropmarker,
  #forward-button,
  #pocket-button-box,
+  /* #pageActionButton, */
  #pageAction-panel-bookmark,
  #pageAction-panel-pocket,
  #pageAction-panel-pocket + toolbarseparator,
@@ -58,12 +60,13 @@
 	transform: rotate(90deg);
 }
 
- /* Hide option in identify (HTTPS) box
-  */
+
 /* HTTPS label (company identity) */
+/*
 #identity-box.verifiedIdentity:not(:hover) > #identity-icon-labels {
    display: none;
  }
+ */
  /* Red box on non-secure connection */
  #identity-box.notSecure {
    color: red;
@@ -110,14 +113,14 @@
 
 /* Hide maximize button
  */
-#titlebar-max {
+.titlebar-button.titlebar-max {
   display: none;
 }
 
 
 /* Show close tab button only when hover
  */
- .tabbrowser-tab:not(:hover) .tab-close-button.close-icon{
+.tabbrowser-tab:not(:hover) .tab-close-button.close-icon{
    display:none;
 }
 
@@ -140,14 +143,7 @@
   display: none;
 }
 
-/*
-#widget-overflow-mainView {
-  min-width: unset !important;
-}
-*/
-
 .widget-overflow-list {
-  /* width: unset !important; */
   display: flex;
 }
 
@@ -156,35 +152,7 @@
 }
 
 
-/* One-line tabbar and addressbar
- * This settings is for Arc themes and Firefox Compact Mode
- * Change margin value depend on your OS theme and Firefox Mode
- */
 /* Remove empty space before first tab */
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"]{
+#TabsToolbar .titlebar-spacer[type="pre-tabs"]{
   display: none !important;
-}
-#nav-bar {
-  /* margin-top: -30px !important; */
-  margin-left: 55vw;
-  margin-right: 55px; /* 85px if include maximize button */
-  background: transparent !important;
-}
-#TabsToolbar {
-  margin-right: 40vw;
-  /* This is a hack to avoid address bar jump to the bottom when holding tab,
-  instead of moving navbar to the top, move tabs bar to the bottom */
-  margin-bottom: -32px !important;
-}
-/* Fix blank space when moving tab
-   Source: https://www.reddit.com/r/FirefoxCSS/comments/8w5ynu/how_to_get_rid_of_this_animation_when_dragging/e1t8vka/
- */
-#TabsToolbar[movingtab] {
-  padding-bottom: 0 !important;
-}
-#TabsToolbar[movingtab] > .tabbrowser-tabs {
-  padding-bottom: 0 !important;
-}
-#nav-bar {
-  margin-top: 0 !important;
 }
