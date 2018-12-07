@@ -9,9 +9,15 @@
         "command": "workbench.action.terminal.focus",
         "when": "editorFocus"
     },
+
     {
         "key": "ctrl+'",
         "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+'",
+        "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
     {
@@ -24,24 +30,32 @@
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
+
+    {
+        "key": "ctrl+/",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "!terminalFocus && !editorFocus"
+    },
     {   // maximum terminal
         "key": "ctrl+/",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
+    },
+    {   // Change pannel to the right / bottom
+        "key": "ctrl+shift+/",
+        "command": "workbench.action.togglePanelPosition"
     },
     {
         "key": "ctrl+k",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
+
     {
         "key": "alt+j",
         "command": "editor.action.joinLines"
     },
-    {
-        "key": "f11",
-        "command": "workbench.action.toggleZenMode",
-    },
+
     // Zoom
     {
         "key": "ctrl+=",
@@ -63,11 +77,17 @@
         "key": "ctrl+numpad0",
         "command": "editor.action.fontZoomReset"
     },
+
+    {   // Zen mode
+        "key": "shift+f11",
+        "command": "workbench.action.toggleZenMode",
+    },
     {   // Toggle left menu bar
         "key": "f10",
         "command": "workbench.action.toggleActivityBarVisibility",
         "when": "!inDebugMode"
     },
+
     // Vim
     {
         "key": "capslock",
