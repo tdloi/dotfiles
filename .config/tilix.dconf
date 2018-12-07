@@ -1,10 +1,29 @@
 [profiles]
 terminal-title='『　』'
 visible-name='Default'
+font='Fantasque Sans Mono 11'
+use-theme-colors=false
+background-color='#282a36'
+foreground-color='#eaeaea'
+background-transparency-percent=3
+palette=['#333333', '#f2777a', '#b9ca4a', '#ffcc66', '#6699cc', '#cc99cc', '#66cccc', '#dddddd', '#545652', '#eb606b', '#9ec400', '#e7c547', '#7aa6da', '#b77ee0', '#54ced6', '#EDEDEB']
 
 [keybindings]
 app-preferences='F1'
-session-add-down='<Primary><Shift>d'
+app-shortcuts='F2'
+terminal-scroll-down='<Ctrl><Shift>Down'
+session-add-auto='<Primary>slash'
+session-add-right='<Primary>m'
+session-add-down='<Primary>n'
+session-resize-terminal-left='<Alt>h'
+session-resize-terminal-down='<Alt>j'
+session-resize-terminal-up='<Alt>k'
+session-resize-terminal-right='<Alt>l'
+session-switch-to-terminal-left='<Primary>comma'
+session-switch-to-terminal-down='<Primary><Shift>less'
+session-switch-to-terminal-up='<Primary><Shift>greater'
+session-switch-to-terminal-right='<Primary>period'
+terminal-save='disabled'
 
 [/]
 sidebar-on-right=false
@@ -15,3 +34,5 @@ control-scroll-zoom=true
 app-title='『　　　』'
 warn-vte-config-issue=false
 window-style='disable-csd-hide-toolbar'
+tab-position='top'
+terminal-title-show-when-single=true
