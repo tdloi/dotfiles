@@ -10,7 +10,6 @@ LS_COLORS=$LS_COLORS:'di=1;31:ex=1;104'; export LS_COLORS
 
 # http://bluesock.org/~willg/dev/ansi.html
 PS1='\[\033[1;32m\]\w \[\033[0;39m\]'
-
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -29,7 +28,6 @@ export PYLINTHOME="$XDG_CONFIG_HOME/pylint"
 # npm
 export NPM_CONFIG_CACHE="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm/global"
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
@@ -63,6 +61,7 @@ alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias df='df -h'
 alias vol="amixer sget Master | awk -F'[][]' '/dB/ { print \$2 }'"
+alias ls='exa'
 
 # python
 alias py='python'
