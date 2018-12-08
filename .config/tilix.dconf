@@ -6,7 +6,7 @@ use-theme-colors=false
 background-color='#282a36'
 foreground-color='#eaeaea'
 background-transparency-percent=3
-palette=['#333333', '#f2777a', '#b9ca4a', '#ffcc66', '#6699cc', '#cc99cc', '#66cccc', '#dddddd', '#545652', '#eb606b', '#9ec400', '#e7c547', '#7aa6da', '#b77ee0', '#54ced6', '#EDEDEB']
+palette=['#333333', '#f2777a', '#b9ca4a', '#ffcc66', '#6699cc', '#cc99cc', '#66cccc', '#dddddd', '#545652', '#eb606b', '#9ec400', '#f0c674', '#7aa6da', '#b77ee0', '#54ced6', '#ededeb']
 
 [keybindings]
 app-preferences='F1'
