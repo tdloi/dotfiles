@@ -1,0 +1,25 @@
+# Alias
+alias Syu='sudo pacman -Syu'
+alias aur='rm -rf * && git reset --hard HEAD && git pull'
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias df='df -h'
+alias vol="amixer sget Master | awk -F'[][]' '/dB/ { print \$2 }'"
+alias ls='exa'
+
+# python
+alias py='python'
+alias pips='pipenv shell'
+alias venv='source venv/bin/activate'
+
+# docker
+alias d='sudo docker'
+alias dc='sudo docker-compose'
+alias dclean='d rmi $(d images -q --filter "dangling=true")'
+
+# WireGuard
+alias wgu='wg-quick up'
+alias wgd='wg-quick down $(wg show interfaces)'
+
+# Load nvm when needed to speed up zsh
+alias nvmload='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
