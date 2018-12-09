@@ -1,0 +1,46 @@
+# Maintainer: Loi Tran <tdloi at protonmail dot com>
+
+pkgname=wps-office-linux
+_pkgname=wps-office
+pkgver=10.1.0.6757
+pkgrel=1
+pkgdesc="WPS Office for Linux"
+arch=('x86_64')
+license=("custom")
+url="http://wps-community.org/"
+depends=(openssl-1.0 glu qt4 libpng12 sdl2 libjpeg-turbo)
+optdepends=(
+  'curl: optional depend for WPS'
+)
+conflicts=('kingsoft-office' 'wps-office')
+source=("http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_${pkgver}_x86_64.tar.xz")
+sha1sums=('03a781599dfcf001fc3bcf1d49699bd1a44aaceb')
+install=${_pkgname}.install
+
+prepare() {
+  sed -i -e 's/%f/-style Cleanlook %f/' ${_pkgname}_${pkgver}_${CARCH}/resource/applications/wps*
+  rm ${_pkgname}_${pkgver}_${CARCH}/resource/applications/appurl.desktop
+  # Avoid can't translate pathname to UTF-8 issue
+  rm -rf ${_pkgname}_${pkgver}_${CARCH}/office6/mui/zh_CN
+}
+
+package() {
+  _pkg="${_pkgname}_${pkgver}_${CARCH}"
+
+  install -d "${pkgdir}/opt/kingsoft/${_pkgname}"
+  cp -r ${_pkg}/office6 "${pkgdir}/opt/kingsoft/${_pkgname}"
+
+  install -d "${pkgdir}/usr/bin"
+  install -m755 ${_pkg}/et ${_pkg}/wps ${_pkg}/wpp "${pkgdir}/usr/bin"
+
+  install -d "${pkgdir}/usr/share/applications"
+  install ${_pkg}/resource/applications/wps* "${pkgdir}/usr/share/applications"
+
+  install -d "${pkgdir}/usr/share/icons"
+  cp -r ${_pkg}/resource/icons/hicolor ${pkgdir}/usr/share/icons
+
+  install -d "${pkgdir}/usr/share/mime/packages"
+  install ${_pkg}/resource/mime/packages/* ${pkgdir}/usr/share/mime/packages
+
+  install -Dm644 "${_pkg}/office6/mui/default/EULA_linux.txt" "${pkgdir}/usr/share/licenses/${pkgname}/EULA_linux.txt"
+}
