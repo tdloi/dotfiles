@@ -7,6 +7,7 @@ cmus
 dina-font
 docker
 docker-compose
+efibootmgr
 exa
 fcitx
 fcitx-configtool
@@ -17,8 +18,8 @@ fcitx-qt4
 fcitx-qt5
 fcitx-unikey
 fd
+feh
 firefox
-firefox-developer-edition
 flameshot
 gifski
 gimp
@@ -60,7 +61,6 @@ termite
 tilix
 tmux
 transmission-qt
-ttf-hanazono
 ttf-inconsolata
 ttf-ionicons
 ttf-roboto
@@ -72,6 +72,7 @@ wireshark-qt
 wpa_supplicant
 xclip
 xf86-video-intel
+xorg-xinit
 yarn
 zeal
 zsh
