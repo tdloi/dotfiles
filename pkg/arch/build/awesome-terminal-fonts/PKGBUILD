@@ -11,7 +11,7 @@ license=('MIT')
 depends=('fontconfig')
 conflicts=('awesome-terminal-fonts')
 source=("${_pkgname}-${pkgver}.tar.gz::$url/archive/v${pkgver}.tar.gz")
-sha512sums=('ee46f6c378f1d2cf353cd58da1c44d48085151cc05d99bc4a096819184c53bbe8db112c6bfd0d9339b79e77004f308ec127050462fa24cc783873a0f8431f711')
+sha512sums=('122a9f6101f88f1c27d2e27263aa85b2184b5b41521c6ae4553407defa69c28db58f4768c62732c968f4512bd13dc989853ccfaffd0408f26b5e39fe04325aa0')
 
 
 package() {
