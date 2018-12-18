@@ -28,12 +28,11 @@ module-margin-right = 1
 
 font-0 = dina:pixelsize=10;2
 font-1 = Ionicons:size=10;2
-font-2 = HanaMinA:size=10;2
-font-3 = Ionicons:size=12;3
-font-4 = icomoon:size=12;3
+font-2 = Ionicons:size=12;3
+font-3 = icomoon:size=12;3
 
 modules-left = i3 cmus-previous cmus-next cmus
-modules-center = xwindow
+modules-center =
 modules-right = alsa memory cpu wlan eth battery date
 
 ;Disable system tray
@@ -53,10 +52,10 @@ ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-4 = 5;
 ws-icon-default = 
-ws-icon-font = 4
-ws-icon-3-font = 3
+ws-icon-font = 3
+ws-icon-3-font = 2
 
 label-focused-foreground = ${colors.black-alt}
 label-focused-background = ${colors.green}
@@ -174,7 +173,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " "
 format-full-prefix-foreground = #77C990
-format-full-prefix-font = 4
+format-full-prefix-font = 3
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -186,7 +185,7 @@ ramp-capacity-foreground = ${colors.green-alt}
 
 animation-charging-0 = 
 animation-charging-foreground = ${colors.green-alt}
-animation-charging-font = 4
+animation-charging-font = 3
 
 
 [module/date]
@@ -200,7 +199,7 @@ label-padding-right = 1
 
 ;date =
 time = %H:%M
-date-alt = " %a %d-%m-%y"
+date-alt = " %a %d-%m"
 time-alt = %H:%M:%S
 
 
