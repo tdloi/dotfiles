@@ -10,7 +10,8 @@ source "$ZDOTDIR/zkey"
 ### Powerline9k themes
 # getColorCode background/foreground
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-source /usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.sh
+source /usr/share/fonts/awesome-terminal-fonts/devicons-regular.sh
+source /usr/share/fonts/awesome-terminal-fonts/octiocns-regular.sh
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable)
@@ -32,7 +33,8 @@ POWERLEVEL9K_VCS_SHORTEN_LENGTH=6
 POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=11
 POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch git-untracked git-aheadbehind git-tagname)POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\u$CODEPOINT_OF_AWESOME_GITHUB"
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch git-untracked git-aheadbehind git-tagname)
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\u$CODEPOINT_OF_AWESOME_GITHUB"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='rosybrown'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='tan'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='lightslateblue'

@@ -1,0 +1,27 @@
+# Author: Christian Rebischke <Chris.Rebischke[at]archlinux[dot]org>
+
+_pkgname=awesome-terminal-fonts
+pkgname=awesome-terminal-fonts-forked
+pkgver=1.2.0
+pkgrel=1
+pkgdesc="awesome terminal fonts/icons for powerlines (removed fontawesome + pomicons)"
+arch=('any')
+url="https://github.com/tdloi/awesome-terminal-fonts"
+license=('MIT')
+depends=('fontconfig')
+conflicts=('awesome-terminal-fonts')
+source=("${_pkgname}-${pkgver}.tar.gz::$url/archive/v${pkgver}.tar.gz")
+sha512sums=('ee46f6c378f1d2cf353cd58da1c44d48085151cc05d99bc4a096819184c53bbe8db112c6bfd0d9339b79e77004f308ec127050462fa24cc783873a0f8431f711')
+
+
+package() {
+  install -d "${pkgdir}/usr/share/fonts/${_pkgname}"
+  install -d "${pkgdir}/etc/fonts/conf.avail"
+  install -Dm 0644 "${srcdir}/${_pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+  install -Dm 0644 "${srcdir}/${_pkgname}-${pkgver}/README.md" "${pkgdir}/usr/share/doc/${_pkgname}/README.md"
+  cd "${srcdir}/${_pkgname}-${pkgver}/build"
+  install -m 0644 * "${pkgdir}/usr/share/fonts/${_pkgname}/"
+  install -m 0644 "${srcdir}/${_pkgname}-${pkgver}/config/10-symbols.conf" "${pkgdir}/etc/fonts/conf.avail"
+  mkdir -p "${pkgdir}/etc/fonts/conf.d"
+  ln -s "/etc/fonts/conf.avail/10-symbols.conf" "${pkgdir}/etc/fonts/conf.d/10-symbols.conf"
+}
