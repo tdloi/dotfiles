@@ -9,13 +9,16 @@
 #main-window[title^="about:newtab"] #PersonalToolbar,
 #main-window[title^="New Tab"] #PersonalToolbar,
 #main-window[title^="Mozilla Firefox"] #PersonalToolbar,
-#main-window[title^="Firefox Developer Edition"] #PersonalToolbar {
+#main-window[title^="Firefox"] #PersonalToolbar {
   visibility: visible !important;
 }
 
 
 /* Hide options from hamburger menu
  */
+#appMenu-tp-button,
+.sync-ui-item,
+#appMenu-tp-label,
 #appMenu-tp-button,
 #appMenu-tp-separator,
 #appMenu-mainView #appMenuRestoreLastSession,
@@ -85,7 +88,7 @@
 /* #context-savelink, */
 #context-savepage,
 #context-selectall,
-#context-viewsource,
+/* #context-viewsource, */
 #context-copyimage-contents,
 #context-sendimage,
 #fill-login,
