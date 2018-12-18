@@ -30,8 +30,9 @@ font-0 = dina:pixelsize=10;2
 font-1 = Ionicons:size=10;2
 font-2 = HanaMinA:size=10;2
 font-3 = Ionicons:size=12;3
+font-4 = icomoon:size=12;3
 
-modules-left = vpn cmus-previous cmus-next cmus
+modules-left = i3 cmus-previous cmus-next cmus
 modules-center = xwindow
 modules-right = alsa memory cpu wlan eth battery date
 
@@ -43,6 +44,25 @@ cursor-scroll = ns-resize
 
 ; https://github.com/jaagr/polybar/wiki/Inter-process-messaging
 enable-ipc = true
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+fuzzy-match = true
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = 
+ws-icon-font = 4
+ws-icon-3-font = 3
+
+label-focused-foreground = ${colors.black-alt}
+label-focused-background = ${colors.green}
+label-separator = |
+label-separator-padding = 1
+label-focused-padding = 1
 
 
 [module/vpn]
@@ -179,8 +199,8 @@ label-background = ${colors.green}
 label-padding-right = 1
 
 ;date =
-time = %a %H:%M
-date-alt = " %d-%m-%y"
+time = %H:%M
+date-alt = " %a %d-%m-%y"
 time-alt = %H:%M:%S
 
 
