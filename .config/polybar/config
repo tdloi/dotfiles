@@ -27,13 +27,13 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = dina:pixelsize=10;2
-font-1 = Ionicons:size=10;2
+font-1 = Ionicons:size=8;2
 font-2 = Ionicons:size=12;3
 font-3 = icomoon:size=12;3
 
-modules-left = i3 cmus-previous cmus-next cmus
-modules-center =
-modules-right = alsa memory cpu wlan eth battery date
+modules-left = i3 
+modules-center = cmus-previous cmus-next cmus
+modules-right = backlight alsa memory cpu wlan battery date
 
 ;Disable system tray
 tray-position =
@@ -70,6 +70,15 @@ exec =  if [ "$(curl -s https://am.i.mullvad.net/json | jq '.country')" != "\"My
 interval = 5
 
 
+[module/aur]
+type = custom/script
+exec = ~/.config/polybar/script/aur.sh
+exec-if = ! wget -q --spider https://google.com
+format-prefix = " "
+interval = 18000
+click-left = ~/.config/polybar/script/aur-push.sh
+
+
 [module/cmus-previous]
 type = custom/script
 exec = echo "<"
@@ -92,51 +101,32 @@ click-left = if cmus-remote -Q | grep -q 'playing'; then cmus-remote -u; else cm
 interval = 1
 
 
-[module/xwindow]
-type = internal/xwindow
-format = <label>
-label-maxlen = 80
-label-font = 3
+[module/backlight]
+type = internal/xbacklight
+format-prefix = " "
+# format-underline = ${colors.foreground}
 
 
 [module/alsa]
 type = internal/alsa
-
-format-volume = <bar-volume> <label-volume>
 format-volume-prefix = " "
-label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
+# format-volume-underline = #0965e7
 format-muted-prefix = " "
 format-muted-foreground = ${colors.black}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #c6d3c6
-bar-volume-foreground-1 = #c6d3c6
-bar-volume-foreground-2 = ${colors.green}
-bar-volume-foreground-3 = ${colors.green}
-bar-volume-foreground-4 = ${colors.green}
-bar-volume-foreground-5 = ${colors.green}
-bar-volume-foreground-6 = ${colors.green}
-bar-volume-foreground-7 = ${colors.green}
-bar-volume-foreground-8 = ${colors.orange}
-bar-volume-foreground-9 = ${colors.orange}
-bar-volume-foreground-10 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-fill = 
-bar-volume-empty = 
-bar-volume-empty-foreground = ${colors.black}
 
 
 [module/memory]
 type = internal/memory
-label = RAM %percentage_used%%
+format-prefix = " "
+# format-underline = #8f70d4
 
 
 [module/cpu]
 type = internal/cpu
-label = CPU %percentage:2%%
+label = %percentage:2%%
+format-prefix = " "
+# format-underline = #c63134
 
 
 [module/wlan]
@@ -144,22 +134,13 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-ramp-signal-0 = 
-label-connected = %essid%
+format-connected = <ramp-signal>
+ramp-signal-0 = ""
 
 format-disconnected = Wifi disconnected
 format-disconnected-foreground = ${colors.black}
-
-
-[module/eth]
-type = internal/network
-interface = enp4s0f2
-interval = 3.0
-
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.black}
-label-connected = %local_ip%
+format-font = 3
+# format-connected-underline = ${colors.orange}
 
 
 [module/battery]
@@ -183,7 +164,7 @@ ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.orange}
 ramp-capacity-foreground = ${colors.green-alt}
 
-animation-charging-0 = 
+animation-charging-0 = 
 animation-charging-foreground = ${colors.green-alt}
 animation-charging-font = 3
 
