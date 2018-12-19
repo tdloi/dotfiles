@@ -1,0 +1,22 @@
+# Maintainer: Loi Tran <tdloi at protonmail[dot]com>
+
+pkgname=fantasque-sans
+pkgver='1.8_alpha'
+_pkgver='1.8-alpha'
+pkgrel=1
+pkgdesc="Fantasque Sans Mono: A programming font, designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool."
+arch=('any')
+url="https://github.com/belluzj/fantasque-sans"
+license=('OFL-1.1')
+source=("${pkgname}.zip::$url/releases/download/v${_pkgver}/FantasqueSansMono-NoLoopK.zip"
+        "https://raw.githubusercontent.com/belluzj/fantasque-sans/v${_pkgver}/LICENSE.txt")
+sha512sums=('07f27e0730fe4919616dcb7ec533700161ab1be160db38ec38100ef68d4862581031314bbebfa8e2c8b3fd81672e9e0a1048b9e3c2a941e1500f0fc64fca2a8c'
+            'a26b8f8a860633d9cfdb6006cb63b628a1ede8aed9673c02743a4a55bd8682f1e455d8878d439cdca6e85a81b9faebb82972d58d758159ed40bb5ff5175ae009')
+
+
+package() {
+    install -d "$pkgdir/usr/share/fonts/TTF"
+    install -d "$pkgdir/usr/share/licenses/${pkgname}"
+    install -Dm644 "${srcdir}/TTF/"* "${pkgdir}/usr/share/fonts/TTF"
+    install -Dm644 "${srcdir}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}"
+}
