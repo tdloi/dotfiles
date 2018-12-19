@@ -4,7 +4,6 @@ anki
 arc-gtk-theme
 chromium
 cmus
-dina-font
 docker
 docker-compose
 efibootmgr
@@ -33,8 +32,6 @@ iwd
 jq
 keepassxc
 libmad
-lightdm-gtk-greeter
-light-locker
 mpv
 mupdf
 namcap
@@ -63,7 +60,6 @@ tilix
 tmux
 transmission-qt
 ttf-inconsolata
-ttf-ionicons
 ttf-roboto
 unrar
 vim
@@ -75,6 +71,7 @@ xautolock
 xclip
 xf86-video-intel
 xorg-xinit
+xss-lock
 yarn
 zeal
 zsh

@@ -168,6 +168,13 @@ bindsym $mod+z exec --no-startup-id rofi -modi drun -show drun
 # Nemo
 bindsym $mod+e exec nemo
 
+# Firefox
+bindsym $mod+b exec firefox
+
+# Polybar
+bindsym $mod+Control+p      exec --no-startup-id polybar-msg cmd toggle
+bindsym $mod+Control+Mod1+p exec --no-startup-id polybar-msg cmd restart tdloi
+
 # Mode
 # resize window
 mode "resize" {        

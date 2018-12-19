@@ -14,14 +14,10 @@ sha512sums=('e677d4c91fa2c2f0fa1eadc9c7cb410e4343f27bae7480c80d78e1f5fd88f0f1fd7
 makedepends=('fd')
 
 
-prepair() {
-    # Clean up
-    fd 'Windows' $srcdir/ -x rm {}
-}
-
 package() {
     install -d "$pkgdir/usr/share/fonts/TTF"
     install -d "$pkgdir/usr/share/licenses/$pkgname"
-    install -Dm644 $srcdir/*ttf $pkgdir/usr/share/fonts/TTF
+    fd 'Windows' $srcdir/ -x rm {}
+    install -Dm644 "${srcdir}/"*.ttf $pkgdir/usr/share/fonts/TTF
     install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}"
 }
