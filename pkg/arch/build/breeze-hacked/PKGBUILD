@@ -1,0 +1,24 @@
+# Maintainer: Loi Tran <tdloi at protonmail dot com>
+pkgname=breeze-hacked
+_pkgname="Breeze_Hacked"
+pkgver=0.1
+pkgrel=1
+pkgdesc="Breeze Hacked cursor theme"
+arch=('any')
+url="https://github.com/tdloi/${pkgname}"
+license=("LGPL")
+source=("${pkgname}-${pkgver}.tar.gz::$url/archive/v${pkgver}.tar.gz")
+sha512sums=('4355870ba44f8bc201c634b04dbd7abe72bba8d7cf2886a449eb13df7ce0f3ae8e35b9cce3dffb5f5f508adf4d5e9aef8234274a916fa94470a3e2e09794f920')
+makedepends=('inkscape')
+
+build() {
+    /bin/bash $srcdir/${pkgname}-$pkgver/build.sh
+}
+
+package() {
+   install -d "$pkgdir/usr/share/icons/${_pkgname}"
+   install -Dm 0644 "${srcdir}/${pkgname}-${pkgver}/COPYING" "${pkgdir}/usr/share/licenses/${_pkgname}/COPYING"
+   install -Dm 0644 "${srcdir}/${pkgname}-${pkgver}/COPYING-ICONS" "${pkgdir}/usr/share/licenses/${_pkgname}/COPYING-ICONS"
+   install -Dm 0644 "${srcdir}/${pkgname}-${pkgver}/README" "${pkgdir}/usr/share/doc/${_pkgname}/README"
+   cp -r "${srcdir}/${pkgname}-${pkgver}/${_pkgname}/"* "$pkgdir/usr/share/icons/${_pkgname}"
+}
