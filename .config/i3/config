@@ -1,8 +1,15 @@
 ### Configurations
 set $mod Mod4
+set $i3dir ~/.config/i3
 
 # Font for window titles.
 font pango:Inconsolata 10
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #21252b #353944 #dfdfdf #2e9ef4   #285577
+client.focused_inactive #333333 #404552 #dfdfdf #484e50   #5f676a
+client.unfocused        #333333 #595e6b #dfdfdf #292d2e   #222222
+client.background       #404552
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -29,12 +36,24 @@ title_align center
 gaps inner 2
 
 # Move mpv to workspace 5 for fullscreen mode
-assign [class="mpv"] $ws5
-for_window [workspace=$ws5] layout tabbed
+assign[class="Chromium"] $ws1
+    for_window[workspace=$ws1] focus
+    workspace $ws1 gaps inner 1
+assign[class="Firefox"] $ws2
+    for_window[workspace=$ws2] focus
+    workspace $ws2 gaps inner 3
+assign [class="Code"] $ws3
+    for_window [workspace=$ws3] focus
+assign [class="mpv"] $ws4
+assign [class="feh"] $ws4
+    for_window [workspace=$ws4] layout tabbed, focus
+    workspace $ws4 gaps inner 0
 
 
 ### Autostart
-exec_always --no-startup-id feh --randomize --bg-fill ~/pictures/wallpaper/*
+exec dropbox
+exec_always --no-startup-id xss-lock -- i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
+exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
 exec_always polybar tdloi
 
 
@@ -42,8 +61,16 @@ exec_always polybar tdloi
 # reload the configuration file
 bindsym $mod+Mod1+b reload
 
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Control+$Mod1+slash restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# i3lock
+# NOTICE: Convert for all image in folder to stretched screen png images with imagemagick
+# fd . images/ -x convert {} -resize $(xdpyinfo | awk '/dimensions/{print $2}')\! output/{/.}.png
+bindsym $mod+Control+l exec i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -54,10 +81,10 @@ bindsym $mod+c layout tabbed
 bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -70,6 +97,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
+bindsym $mod+Mod1+h move left
+bindsym $mod+Mod1+j move down
+bindsym $mod+Mod1+k move up
+bindsym $mod+Mod1+l move right
 bindsym $mod+Control+Left move left
 bindsym $mod+Control+Down move down
 bindsym $mod+Control+Up move up
@@ -102,7 +133,9 @@ bindsym $mod+period move container to workspace next
 bindsym $mod+comma move container to workspace prev
 
 # Kill focused window
+bindsym $mod+q kill
 bindsym $mod+w kill
+bindsym $mod+Control+k kill
 
 # Move between workspace
 bindsym Mod1+Tab workspace next
@@ -115,8 +148,14 @@ bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+
 bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%-
 bindsym XF86AudioMute exec amixer set 'Master' toggle
 # Alternative key in case using external keyboards
-bindsym Super_R+equal exec amixer set 'Master' 5%+
-bindsym Super_R+minus exec amixer set 'Master' 5%-
+bindsym $mod+Mod1+equal exec amixer set 'Master' 5%+
+bindsym $mod+Mod1+minus exec amixer set 'Master' 5%-
+bindsym $mod+Mod1+BackSpace exec amixer set 'Master' toggle
+
+# Screenshot
+bindsym Print exec --no-startup-id flameshot full -p ~/pictures/screenshots
+bindsym Shift+Print exec flameshot gui -p ~/pictures/screenshots
+bindsym Mod1+Sys_Req exec --no-startup-id flameshot full -p ~/pictures/screenshots -d 4000 # https://github.com/i3/i3/issues/2068#issuecomment-156951279
 
 # Alacritty
 bindsym $mod+Return exec alacritty
@@ -151,13 +190,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-### Archived configs
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+r restart
+
 # split in horizontal/vertical orientation
 # bindsym $mod+c split h
 # bindsym $mod+v split v
-# focus the parent container
+# focus the parent/child container
 # bindsym $mod+a focus parent
-# focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child

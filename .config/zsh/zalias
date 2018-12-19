@@ -23,3 +23,6 @@ alias wgd='wg-quick down $(wg show interfaces)'
 
 # Load nvm when needed to speed up zsh
 alias nvmload='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+
+# i3
+alias i3lock="i3lock -t -i $(fd 'png' $XDG_CONFIG_HOME/i3/lockscreen | shuf -n1)"
