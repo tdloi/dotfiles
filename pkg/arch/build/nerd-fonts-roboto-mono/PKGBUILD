@@ -1,0 +1,27 @@
+# Author: Loi Tran <tdloi at protonmail[dot]com>
+
+pkgname=nerd-fonts-roboto-mono
+pkgver=2.0.0
+pkgrel=1
+pkgdesc="Patched Roboto Mono Nerd fonts"
+arch=('any')
+url="https://github.com/ryanoasis/nerd-fonts"
+license=('MIT')
+source=("${pkgname}.zip::$url/releases/download/v${pkgver}/RobotoMono.zip"
+        "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/$pkgver/LICENSE")
+sha512sums=('e677d4c91fa2c2f0fa1eadc9c7cb410e4343f27bae7480c80d78e1f5fd88f0f1fd7d685183c531b473b4d59231a5b24c691f33e3d7b950c7d8e5cc91bf7b0003'
+            '95712651fb58ad5f5ee1b796b1891e5cb6c62532699c08d3cd9255df46c10336faa170b4ec5a920be44d2cba68ab7726907c800e4a9b0060483437569cfe6fd3')
+makedepends=('fd')
+
+
+prepair() {
+    # Clean up
+    fd 'Windows' $srcdir/ -x rm {}
+}
+
+package() {
+    install -d "$pkgdir/usr/share/fonts/TTF"
+    install -d "$pkgdir/usr/share/licenses/$pkgname"
+    install -Dm644 $srcdir/*ttf $pkgdir/usr/share/fonts/TTF
+    install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}"
+}

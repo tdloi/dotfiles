@@ -1,4 +1,5 @@
-# Author: Christian Rebischke <Chris.Rebischke[at]archlinux[dot]org>
+# Author: Loi Tran <tdloi at protonmail[dot]com>
+# Modified from official awesome-terminal-fonts PKGBUILD
 
 _pkgname=awesome-terminal-fonts
 pkgname=awesome-terminal-fonts-forked

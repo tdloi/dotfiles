@@ -15,7 +15,7 @@ optdepends=(
 conflicts=('kingsoft-office' 'wps-office')
 source=("http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_${pkgver}_x86_64.tar.xz")
 sha1sums=('03a781599dfcf001fc3bcf1d49699bd1a44aaceb')
-install=${_pkgname}.install
+install=${pkgname}.install
 
 prepare() {
   sed -i -e 's/%f/-style Cleanlook %f/' ${_pkgname}_${pkgver}_${CARCH}/resource/applications/wps*
