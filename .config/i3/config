@@ -57,6 +57,7 @@ exec dropbox
 exec_always --no-startup-id xss-lock -- i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
 exec_always polybar tdloi
+exec_always fcitx
 
 
 ### Key binding
