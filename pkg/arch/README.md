@@ -2,7 +2,10 @@
 + namcap
 + pkgfile
 
-dumps: `comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps xfce4 xfce4-goodies | sort) > pacman`
+dumps:
+```bash
+comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps i3 xfce4 xfce4-goodies | sort) > pacman
+```
 
 **Terminal**
 + Alacritty
@@ -18,7 +21,6 @@ dumps: `comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg
 + noto-fonts-cjk
 + noto-fonts-emoji
 + dina-font
-+ ttf-hanazono
 + ttf-inconsolata
 + ttf-ionicons
 + ttf-roboto
