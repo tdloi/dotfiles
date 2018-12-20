@@ -2,6 +2,8 @@ declare -a arr=(
     "alacritty/alacritty.yml"
     "cmus/rc"
     "fcitx/*"
+    "fontconfig/fonts.conf"
+    "i3/*"
     "mpv/*"
     "rofi/*"
     "termite/config"

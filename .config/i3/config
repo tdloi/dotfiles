@@ -33,12 +33,12 @@ default_border pixel 1
 title_align center
 
 # Gaps
-gaps inner 2
+gaps inner 3
 
 # Move mpv to workspace 5 for fullscreen mode
 assign[class="Chromium"] $ws1
     for_window[workspace=$ws1] focus
-    workspace $ws1 gaps inner 1
+    workspace $ws1 gaps inner 3
 assign[class="Firefox"] $ws2
     for_window[workspace=$ws2] focus
     workspace $ws2 gaps inner 3
@@ -51,6 +51,7 @@ assign [class="feh"] $ws4
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
     for_window [workspace=$ws5] layout tabbed, focus
+    workspace $ws5 gaps inner 2
 
 ### Autostart
 exec dropbox
@@ -151,8 +152,8 @@ bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+
 bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%-
 bindsym XF86AudioMute exec amixer set 'Master' toggle
 # Alternative key in case using external keyboards
-bindsym $mod+Mod1+equal exec amixer set 'Master' 5%+
-bindsym $mod+Mod1+minus exec amixer set 'Master' 5%-
+bindsym $mod+equal exec amixer set 'Master' 5%+
+bindsym $mod+minus exec amixer set 'Master' 5%-
 bindsym $mod+Mod1+BackSpace exec amixer set 'Master' toggle
 
 # Screenshot
