@@ -32,6 +32,9 @@ default_border pixel 1
 # Center title bar (tabbed)
 title_align center
 
+# Enable workspace back and forth
+workspace_auto_back_and_forth yes
+
 # Gaps
 gaps inner 3
 
@@ -55,7 +58,7 @@ for_window [class="Gimp"] move workspace $ws5
 
 ### Autostart
 exec dropbox
-exec_always --no-startup-id xss-lock -- i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
+exec_always --no-startup-id xss-lock -- i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
 exec_always polybar tdloi
 exec_always fcitx
@@ -74,7 +77,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 # i3lock
 # NOTICE: Convert for all image in folder to stretched screen png images with imagemagick
 # fd . images/ -x convert {} -resize $(xdpyinfo | awk '/dimensions/{print $2}')\! output/{/.}.png
-bindsym $mod+Control+l exec i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
+bindsym $mod+Control+l exec i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -204,11 +207,11 @@ bindsym $mod+r mode "resize"
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id \
-            i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1, mode "default"
+            i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1, mode "default"
     bindsym s exec --no-startup-id \
-            i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1 && systemctl suspend, mode "default"
+            i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1 && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id \
-            i3lock -t -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1 && systemctl hibernate, mode "default"
+            i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1) && sleep 1 && systemctl hibernate, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
