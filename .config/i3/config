@@ -49,20 +49,24 @@ assign [title="Code*"] $ws3
 assign [class="Code"] $ws3
     for_window [workspace=$ws3] focus
 assign [class="mpv"] $ws4
-assign [class="feh"] $ws4
     for_window [workspace=$ws4] layout tabbed, focus
     workspace $ws4 gaps inner 0
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-    for_window [workspace=$ws5] layout tabbed, focus
-    workspace $ws5 gaps inner 2
+assign [class="keepassxc"] $ws5
+assign [class="Gucharmap"] $ws5
+    for_window [workspace=$ws5] layout tabbed
+assign [class="feh"] $ws6
+assign [title="GIMP Startup"] $ws6
+assign [class="Gimp"] $ws6
+    for_window [workspace=$ws6] layout tabbed, focus
+    workspace $ws6 gaps inner 0
 
 ### Autostart
-exec dropbox
+exec --no-startup-id dropbox
+# exec --no-startup-id xautolock -time 1 -locker "i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)"
 exec_always --no-startup-id xss-lock -- i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
-exec_always polybar tdloi
-exec_always fcitx
+exec_always --no-startup-id polybar tdloi
+exec_always --no-startup-id fcitx
 
 
 ### Key binding
