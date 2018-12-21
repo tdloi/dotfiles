@@ -45,6 +45,7 @@ assign[class="Chromium"] $ws1
 assign[class="Firefox"] $ws2
     for_window[workspace=$ws2] focus
     workspace $ws2 gaps inner 3
+assign [title="Code*"] $ws3
 assign [class="Code"] $ws3
     for_window [workspace=$ws3] focus
 assign [class="mpv"] $ws4

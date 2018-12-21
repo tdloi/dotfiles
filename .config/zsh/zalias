@@ -26,3 +26,6 @@ alias nvmload='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 
 # i3
 alias i3lock="i3lock -et -i $(fd 'png' $XDG_CONFIG_HOME/i3/lockscreen | shuf -n1)"
+
+# vscode
+alias code="code --extensions-dir $XDG_DATA_HOME/vscode-oss/extensions"

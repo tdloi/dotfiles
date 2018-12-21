@@ -4,6 +4,7 @@ anki
 arc-gtk-theme
 chromium
 cmus
+code
 docker
 docker-compose
 efibootmgr
@@ -55,7 +56,6 @@ python-pip
 redshift
 rofi
 rust
-screenfetch
 termite
 tmux
 transmission-qt
