@@ -7,8 +7,10 @@ from time import time
 OVERRIDE = True
 
 LIST_FILE_SYMLINK = [
+    '.bash_profile',
     '.bashrc',
     '.xinitrc',
+    '.xprofile',
     '.zshenv',
 ]
 
