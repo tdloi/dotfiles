@@ -40,7 +40,6 @@ nemo
 nemo-fileroller
 neofetch
 nodejs
-notepadqq
 noto-fonts-cjk
 noto-fonts-emoji
 npm
@@ -50,7 +49,6 @@ p7zip
 peek
 picard
 pkgfile
-plank
 pulseaudio-alsa
 python-pip
 redshift
@@ -67,8 +65,8 @@ wget
 wireguard-tools
 wireshark-qt
 wpa_supplicant
-xautolock
 xclip
+xed
 xf86-video-intel
 xorg-xinit
 xss-lock
