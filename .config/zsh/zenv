@@ -34,6 +34,9 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 # GPG
 export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
 
+# vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+
 # Custom script
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
