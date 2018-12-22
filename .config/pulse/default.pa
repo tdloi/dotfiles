@@ -1,0 +1,8 @@
+# Include default.pa then unload module instead of complete copy
+# https://wiki.archlinux.org/index.php/PulseAudio#default.pa
+.include /etc/pulse/default.pa
+
+
+.ifexists module-esound-protocol-unix.so
+unload-module module-esound-protocol-unix
+.endif

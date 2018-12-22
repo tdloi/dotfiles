@@ -23,6 +23,7 @@ LIST_CONFIG_SYMLINK = [
     "fontconfig",
     "i3",
     "mpv",
+    "pulse",
     "rofi",
     "zsh",
 ]
