@@ -67,7 +67,7 @@ exec --no-startup-id dropbox
 # exec --no-startup-id xautolock -time 1 -locker "i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)"
 exec_always --no-startup-id xss-lock -- i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
-exec_always --no-startup-id polybar tdloi
+exec_always --no-startup-id polybar -rq tdloi
 exec_always --no-startup-id fcitx
 
 
@@ -185,7 +185,7 @@ bindsym $mod+b exec firefox
 
 # Polybar
 bindsym $mod+Control+p      exec --no-startup-id polybar-msg cmd toggle
-bindsym $mod+Control+Mod1+p exec --no-startup-id polybar-msg cmd restart tdloi
+bindsym $mod+Control+Mod1+p exec --no-startup-id polybar-msg cmd restart
 
 # Mode
 # resize window
