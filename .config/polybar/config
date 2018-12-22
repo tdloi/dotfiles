@@ -31,7 +31,7 @@ font-1 = RobotoMono Nerd Font:pixelsize=9;2
 
 modules-left = i3
 modules-center = cmus-previous cmus-next cmus
-modules-right = backlight alsa memory cpu wlan battery date
+modules-right = alsa xbacklight memory cpu wlan battery date
 
 ;Disable system tray
 tray-position =
@@ -98,9 +98,10 @@ click-left = if cmus-remote -Q | grep -q 'playing'; then cmus-remote -u; else cm
 interval = 1
 
 
-[module/backlight]
+[module/xbacklight]
 type = internal/xbacklight
 format-prefix = " "
+enable-scroll = false
 # format-underline = ${colors.foreground}
 
 
