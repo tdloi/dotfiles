@@ -13,6 +13,7 @@ client.background       #404552
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+floating_maximum_size 0 x 750
 
 # Define names for default workspaces
 set $ws1 "1"
@@ -38,7 +39,8 @@ workspace_auto_back_and_forth yes
 # Gaps
 gaps inner 3
 
-# Move mpv to workspace 5 for fullscreen mode
+# Config workspace and window for specific program
+for_window[class="Alacritty"] floating enable, move position 50 px 25 px, focus
 assign[class="Chromium"] $ws1
     for_window[workspace=$ws1] focus
     workspace $ws1 gaps inner 3
@@ -74,10 +76,8 @@ exec_always --no-startup-id fcitx
 bindsym $mod+Mod1+b reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+$Mod1+slash restart
+bindsym $mod+Control+Mod1+b restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # i3lock
 # NOTICE: Convert for all image in folder to stretched screen png images with imagemagick
@@ -93,10 +93,10 @@ bindsym $mod+c layout tabbed
 bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+space floating toggle
+bindsym $mod++Mod1+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -190,16 +190,16 @@ bindsym $mod+Control+Mod1+p exec --no-startup-id polybar-msg cmd restart tdloi
 # Mode
 # resize window
 mode "resize" {
-        bindsym h resize shrink width 1 px or 1 ppt
-        bindsym j resize grow height 1 px or 1 ppt
-        bindsym k resize shrink height 1 px or 1 ppt
-        bindsym l resize grow width 1 px or 1 ppt
+        bindsym h resize shrink width 2 px or 2 ppt
+        bindsym j resize grow height 2 px or 2 ppt
+        bindsym k resize shrink height 2 px or 2 ppt
+        bindsym l resize grow width 2 px or 2 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
+        bindsym Left resize shrink width 2 px or 2 ppt
+        bindsym Down resize grow height 2 px or 2 ppt
+        bindsym Up resize shrink height 2 px or 2 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -208,6 +208,48 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Resize for floating window
+mode "resize_big" {
+        bindsym h resize shrink width 20 px or 20 ppt
+        bindsym j resize grow height 20 px or 20 ppt
+        bindsym k resize shrink height 20 px or 20 ppt
+        bindsym l resize grow width 20 px or 20 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 20 px or 20 ppt
+        bindsym Down resize grow height 20 px or 20 ppt
+        bindsym Up resize shrink height 20 px or 20 ppt
+        bindsym Right resize grow width 20 px or 20 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+        bindsym $mod+Control+r mode "default"
+}
+bindsym $mod+Control+r mode "resize_big"
+
+# Move container in floating mode
+mode "move container" {
+        bindsym 0 move position 20 px 20 px, mode "default"
+        bindsym 1 move [absolute] position center, mode "default"
+        bindsym h move left 30px or 20 ppt
+        bindsym j move bottom 30px or 20 ppt
+        bindsym k move top 30px or 20 ppt
+        bindsym l move right 30px or 20 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left move left 30px or 20 ppt
+        bindsym Down move bottom 30px or 20 ppt
+        bindsym Up move top 30px or 20 ppt
+        bindsym Right move right 30px or 20 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+Control+m mode "default"
+}
+bindsym $mod+Mod1+m mode "move container"
 
 set $mode_system System (E)xit, (R)eboot, (S)uspend, (P)oweroff
 mode "$mode_system" {
