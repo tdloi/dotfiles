@@ -149,9 +149,11 @@ bindsym $mod+q kill
 bindsym $mod+w kill
 bindsym $mod+Control+k kill
 
-# Move between workspace
+# Move to next/prev workspace
 bindsym Mod1+Tab workspace next
-bindsym $mod+Tab workspace prev
+bindsym $mod+Mod1+Tab workspace prev
+# Move to prev active workspace using back and forth
+bindsym $mod+Tab exec --no-startup-id i3-msg "workspace $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num')"
 
 # Function key
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
