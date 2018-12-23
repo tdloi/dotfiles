@@ -1,0 +1,137 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Show bookmark bar only on new tab
+ */
+#main-window #PersonalToolbar {
+  visibility: collapse !important;
+}
+
+#main-window[title^="about:newtab"] #PersonalToolbar,
+#main-window[title^="New Tab"] #PersonalToolbar,
+#main-window[title^="Firefox Developer Edition"] #PersonalToolbar,
+#main-window[title^="Firefox"] #PersonalToolbar {
+  visibility: visible !important;
+}
+
+
+/* Hide options from hamburger menu
+ */
+#appMenu-tp-button,
+.sync-ui-item,
+#appMenu-tp-label,
+#appMenu-tp-button,
+#appMenu-tp-separator,
+#appMenu-mainView #appMenuRestoreLastSession,
+#appMenu-mainView #appMenu-zoom-controls,
+#appMenu-mainView #appMenu-zoom-controls + toolbarseparator,
+#appMenu-mainView #appMenu-edit-controls,
+#appMenu-mainView #appMenu-edit-controls + toolbarseparator,
+#appMenu-mainView #appMenu-library-button,
+#appMenu-mainView #appMenu-open-file-button,
+#appMenu-mainView #appMenu-save-file-button,
+#appMenu-mainView #appMenu-more-button,
+#appMenu-mainView #appMenu-developer-button,
+#appMenu-mainView #appMenu-print-button,
+#appMenu-mainView #appMenu-print-button + toolbarseparator {
+  display: none;
+}
+
+
+/* Hide options in address bar
+ * Remove #pageActionButton when need to add a search engine into firefox
+ */
+ .urlbar-history-dropmarker,
+ #urlbar:hover > .urlbar-textbox-container > .urlbar-history-dropmarker,
+ #forward-button,
+ #pocket-button-box,
+  /* #pageActionButton, */
+ #pageAction-panel-bookmark,
+ #pageAction-panel-pocket,
+ #pageAction-panel-pocket + toolbarseparator,
+ #pageAction-panel-emailLink,
+ #pageAction-panel-sendToDevice,
+ #pageAction-panel-copyURL,
+ #pageAction-panel-screenshots,
+ #pageAction-panel-screenshots + toolbarseparator,
+ #pageAction-urlbar-webcompat-reporter_mozilla_org,
+ #pageAction-panel-webcompat-reporter-button,
+ #pageAction-panel-webcompat-reporter-button + toolbarseparator {
+   display: none;
+ }
+
+#pageActionButton {
+	transform: rotate(90deg);
+}
+
+
+/* HTTPS label (company identity) */
+/*
+#identity-box.verifiedIdentity:not(:hover) > #identity-icon-labels {
+   display: none;
+ }
+ */
+ /* Red box on non-secure connection */
+ #identity-box.notSecure {
+   color: red;
+ }
+
+
+/* Hide option in context menu (Right Click)
+ */
+#context-pocket,
+#context-savelinktopocket,
+#context-sendpagetodevice,
+#context-sendlinktodevice,
+#context-bookmarkpage,
+#context-bookmarklink,
+#context-openlink,
+/* #context-savelink, */
+#context-savepage,
+#context-selectall,
+#context-viewsource,
+#context-copyimage-contents,
+#context-sendimage,
+#fill-login,
+#ublock0_raymondhill_net-menuitem-_uBlock0-blockElement {
+  display: none;
+}
+
+
+/* Hide option when RClick on tab
+ */
+#context_reloadTab,
+#context_openTabInWindow,
+#context_sendTabToDevice_separator,
+#context_sendTabToDevice,
+#context_sendTabToDevice + menuseparator,
+#context_reloadAllTabs,
+#context_bookmarkAllTabs,
+#context_closeTabsToTheEnd,
+#context_undoCloseTab {
+  display: none;
+}
+
+
+/* Hide maximize button
+ */
+.titlebar-button.titlebar-max {
+  display: none;
+}
+
+
+/* Change Hamburger menu icon
+ */
+#PanelUI-menu-button {
+    list-style-image: url("chrome://branding/content/icon16.png") !important;
+}
+@media (min-resolution: 2dppx) {
+  #PanelUI-menu-button {
+      list-style-image: url("chrome://branding/content/icon32.png") !important;
+  }
+}
+
+
+/* Remove empty space before first tab */
+#TabsToolbar .titlebar-spacer[type="pre-tabs"]{
+  display: none !important;
+}

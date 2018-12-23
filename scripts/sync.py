@@ -11,6 +11,9 @@ LIST_FILE_SYMLINK = [
     '.xinitrc',
     '.profile',
     '.zshenv',
+    '.mozilla/firefox/firefox/chrome/userChrome.css',
+    '.mozilla/firefox/firefox/chrome/userContent.css',
+    '.mozilla/firefox/firefox-dev/chrome/userChrome.css',
 ]
 
 # List of folder/file need to be symlinked

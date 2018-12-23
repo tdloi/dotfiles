@@ -20,12 +20,14 @@ fcitx-unikey
 fd
 feh
 firefox
+firefox-developer-edition
 flameshot
 gifski
 gimp
 git
 grub
 gucharmap
+htop
 httpie
 imagemagick
 intel-ucode
@@ -51,6 +53,7 @@ picard
 pkgfile
 pulseaudio-alsa
 python-pip
+ranger
 redshift
 rofi
 rust

@@ -73,10 +73,10 @@ exec_always --no-startup-id fcitx
 
 ### Key binding
 # reload the configuration file
-bindsym $mod+Mod1+b reload
+bindsym $mod+Mod1+u reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+Mod1+b restart
+bindsym $mod+Control+Mod1+u restart
 
 
 # i3lock
@@ -183,7 +183,8 @@ bindsym $mod+z exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+e exec nemo
 
 # Firefox
-bindsym $mod+b exec firefox
+bindsym $mod+b      exec firefox
+bindsym $mod+Mod1+b exec firefox-developer-edition
 
 # Polybar
 bindsym $mod+p      exec --no-startup-id polybar-msg cmd toggle
