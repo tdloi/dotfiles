@@ -23,6 +23,7 @@
         "**/venv": true,
     },
     "explorer.openEditors.visible": 7,
+    "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.letterSpacing": 1,
 
