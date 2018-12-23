@@ -141,8 +141,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-bindsym $mod+period move container to workspace next
-bindsym $mod+comma move container to workspace prev
+bindsym $mod+period exec --no-startup-id i3-msg "move container to workspace $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num') + 1 ))"
+bindsym $mod+comma exec --no-startup-id i3-msg "move container to workspace $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused).num') - 1 ))"
 
 # Kill focused window
 bindsym $mod+q kill
@@ -186,8 +186,8 @@ bindsym $mod+e exec nemo
 bindsym $mod+b exec firefox
 
 # Polybar
-bindsym $mod+Control+p      exec --no-startup-id polybar-msg cmd toggle
-bindsym $mod+Control+Mod1+p exec --no-startup-id polybar-msg cmd restart
+bindsym $mod+p      exec --no-startup-id polybar-msg cmd toggle
+bindsym $mod+Control+p exec --no-startup-id polybar-msg cmd restart
 
 # Mode
 # resize window
@@ -235,16 +235,16 @@ bindsym $mod+Control+r mode "resize_big"
 mode "move container" {
         bindsym 0 move position 20 px 20 px, mode "default"
         bindsym 1 move [absolute] position center, mode "default"
-        bindsym h move left 30px or 20 ppt
-        bindsym j move bottom 30px or 20 ppt
-        bindsym k move top 30px or 20 ppt
-        bindsym l move right 30px or 20 ppt
+        bindsym h move left 30px or 30 ppt
+        bindsym j move bottom 30px or 30 ppt
+        bindsym k move top 30px or 30 ppt
+        bindsym l move right 30px or 30 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left move left 30px or 20 ppt
-        bindsym Down move bottom 30px or 20 ppt
-        bindsym Up move top 30px or 20 ppt
-        bindsym Right move right 30px or 20 ppt
+        bindsym Left move left 30px or 30 ppt
+        bindsym Down move bottom 30px or 30 ppt
+        bindsym Up move top 30px or 30 ppt
+        bindsym Right move right 30px or 30 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
