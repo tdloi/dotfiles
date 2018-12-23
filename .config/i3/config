@@ -53,7 +53,7 @@ assign [class="Code"] $ws3
 assign [class="mpv"] $ws4
     for_window [workspace=$ws4] layout tabbed, focus
     workspace $ws4 gaps inner 0
-assign [class="keepassxc"] $ws5
+assign [title="^KeePassXC$"] $ws5
 assign [class="Gucharmap"] $ws5
     for_window [workspace=$ws5] layout tabbed
 assign [class="feh"] $ws6
