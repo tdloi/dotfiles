@@ -30,5 +30,8 @@ alias i3lock="i3lock -et -i $(fd 'png' $XDG_CONFIG_HOME/i3/lockscreen | shuf -n1
 # vscode
 alias code="code --extensions-dir $XDG_DATA_HOME/vscode-oss/extensions"
 
-# alias
+# termite
 alias termite="termite -e tmux"
+
+alias kb="keepassxc-cli"
+alias kbc="keepassxc-cli clip"

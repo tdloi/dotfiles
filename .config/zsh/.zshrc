@@ -5,7 +5,7 @@ SAVEHIST=1000000
 source "$ZDOTDIR/zenv"
 source "$ZDOTDIR/zalias"
 source "$ZDOTDIR/zkey"
-
+source "$ZDOTDIR/.zzz"
 
 ### Powerline9k themes
 # getColorCode background/foreground
