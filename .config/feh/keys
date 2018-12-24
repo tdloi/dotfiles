@@ -1,0 +1,23 @@
+next_img    n   Right   space
+prev_img    p   Left    BackSpace
+
+toggle_fullscreen   f
+toggle_actions      l
+toggle_filenames    C-f     F
+toggle_menu         m
+toggle_filenames    t       x
+toggle_caption      c
+
+delete          C-Delete    Delete
+quit            Escape      q           w
+
+scroll_up       C-Up
+scroll_down     C-Down
+scroll_left     C-Left
+scroll_right    C-Right
+
+zoom_in         i   =
+zoom_out        o   -
+zoom_default    d
+zoom_fill       a
+zoom_fit        s

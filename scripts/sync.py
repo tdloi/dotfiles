@@ -19,12 +19,13 @@ LIST_CONFIG_SYMLINK = [
     "alacritty",
     "cmus",
     "fcitx",
+    "feh",
     "fontconfig",
     "i3",
     "mpv",
     "pulse",
-    "rofi",
     "redshift",
+    "rofi",
     "zsh",
 ]
 
