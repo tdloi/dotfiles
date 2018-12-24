@@ -41,6 +41,7 @@ gaps inner 3
 
 # Config workspace and window for specific program
 for_window[class="Alacritty"] floating enable, move position 50 px 25 px, focus
+for_window[class="feh"] floating enable
 assign[class="Chromium"] $ws1
     for_window[workspace=$ws1] focus
     workspace $ws1 gaps inner 3
@@ -56,7 +57,6 @@ assign [class="mpv"] $ws4
 assign [title="^KeePassXC$"] $ws5
 assign [class="Gucharmap"] $ws5
     for_window [workspace=$ws5] layout tabbed
-assign [class="feh"] $ws6
 assign [title="GIMP Startup"] $ws6
 assign [class="Gimp"] $ws6
     for_window [workspace=$ws6] layout tabbed, focus
