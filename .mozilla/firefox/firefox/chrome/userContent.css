@@ -53,3 +53,171 @@ button#onboarding-overlay-button.onboarding-watermark,
     height: 8px !important;
   }
 }
+
+@-moz-document domain(mail.google.com) {
+  :root {
+    --gmail-bg: #f7f7f7;
+    --gmail-fg: black;        /* Use for all link + email title */
+    --gmail-fg-sub: black;    /* Use for color logout, left menu */
+
+    --gmail-left-width: 180px;
+    --gmail-bg-left: unset;
+
+    --gmail-bg-top: unset;
+
+    --gmail-bg-odd: #f7f7f7;
+    --gmail-bg-even: #e6e4e0;
+
+    --gmail-searchbar-length: 450px;
+
+    --gmail-mail-fontsize: 14px;
+    --gmail-mail-lineheight: 2.2rem;
+
+    --gmail-fg-label: #333;
+    --gmail-fg-desc: #797979;
+  }
+  body {
+    background: var(--gmail-bg) !important;
+    margin: 0;
+  }
+  a { color: var(--gmail-fg) !important; }
+
+  /* Move top menu (include search bar) */
+  body > table:first-of-type {
+    position: relative;
+    bottom: 40px;
+    margin-bottom: -40px;
+    background: var(--gmail-bg-top) !important;
+  }
+
+  #gbar, .gbh { display: none; }
+
+  /* Gmail logo */
+  img[src="//www.gmail.com/mail/help/images/logonew.gif"] {
+    /* visibility: hidden; */
+    margin-left: 0.2rem;
+    margin-right: 2rem;
+  }
+  /* Hide Search the web button */
+  .search-form-submit[name=nvp_site_web] { display: none; }
+  /* Increase search bar length */
+  #sbq { width: var(--gmail-searchbar-length); }
+  /* Move User bar to match search bar */
+  #guser {
+    max-width: 200px;
+    position: relative;
+    top: 15px;
+    left: 1100px;
+    color: var(--gmail-fg);
+    z-index: 1;
+  }
+  /* Hide everything in userbar except mail and logout */
+  #guser .gb4:not(:last-of-type) { display: none; }
+  #guser a.gb4 { color: var(--gmail-fg-sub) !important; }
+
+  /* Main content */
+  body > table:last-child tbody tr > td {
+    font-size:   var(--gmail-mail-fontsize) !important;
+    line-height: var(--gmail-mail-lineheight) !important;
+    /* vertical-align: middle !important; */
+  }
+  /* Increase height of title email to avoid being hidden */
+  .th .ts { height: var(--gmail-mail-lineheight) !important; }
+
+  body > table:last-child > tbody > tr > td:first-child > table {
+    width: var(--gmail-left-width) !important;
+    background: var(--gmail-bg-left);
+  }
+  body > table:last-child > tbody > tr > td:first-child > table a {
+    color: var(--gmail-fg-sub) !important;
+    text-decoration: none;
+    margin-left: 1.2rem;
+  }
+  /* Styling Compose button */
+  body > table:last-child > tbody > tr > td:first-child > table:first-of-type > tbody > tr:first-of-type a:first-of-type {
+    color: whitesmoke !important;
+    background: #9397cd;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Styling label title on left menu */
+  /* .lb {
+    max-height: 295px;
+    display: block;
+    overflow: auto;
+  } */
+  .lb h2:first-of-type font {
+    color: var(--gmail-fg-sub) !important;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  .lb h2:first-of-type font::after {
+      content: " >>";
+  }
+  /* Label list */
+  .lb a:first-child font {
+    color: var(--gmail-fg-sub) !important;
+    text-decoration: none;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid;
+    margin-bottom: 1rem;
+  }
+  /* Button action on right menu */
+  input[type="submit"], select {
+    background: whitesmoke !important;
+    border: 2px solid !important;
+    padding: 0.2rem 1.2rem !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  /* Right menu */
+  .th tbody tr,
+  body > table:last-child > tbody > tr > td:last-child > table:first-child > tbody > tr > h2 > td:first-child,
+  body > table:last-child > tbody > tr > td:last-child > table:first-child > tbody > tr > h2 > td > form > table:first-of-type {
+    background: var(--gmail-bg-odd) !important;
+  }
+  .th tbody tr:nth-child(2n) {
+    background: var(--gmail-bg-even) !important;
+  }
+  /* Styling mail label */
+  .ts > font:first-child > font:not(:empty) {
+    color: var(--gmail-fg-label) !important;
+    border: 1px solid black;
+    padding: 1px 3px;
+    margin-right: 0.3rem;
+  }
+  .ts font:last-child {
+    color: var(--gmail-fg-desc) !important;
+  }
+  /* Make mail box list scrollable */
+  /* body > table:last-child > tbody > tr > td:last-child > table:first-of-type > tbody > tr > td:last-child > form > table:nth-child(odd) {
+    max-height: 500px !important;
+    display: block;
+    overflow-y: auto;
+  } */
+  /* hide some googe bottom link, ip div and learn more in view box */
+  /* .ft > tbody > tr:nth-child(odd),
+  .ft > tbody > tr:nth-child(2) > td > div:first-of-type,
+  .ft > tbody > tr:nth-child(2) > td > div > table td div a:last-of-type{
+    display: none;
+  } */
+  /* .bm { background: none; } */
+  /* remove change view (standard/html) box style */
+  /* .ft > tbody > tr:nth-child(2) > td > div > table td {
+    background: none !important;
+    border: none !important;
+    margin: none !important;
+    line-height: unset !important;
+  } */
+  /* Made current usage and change view box on same line */
+  /* .ft > tbody > tr:nth-child(2) > td {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+  } */
+
+}
