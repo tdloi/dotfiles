@@ -39,3 +39,11 @@ fi
 
 export PATH="$XDG_DATA_HOME/npm/global/bin:$PATH"
 export PATH="$XDG_DATA_HOME/yarn/global/node_modules/.bin:$PATH"
+
+# fzf
+export FZF_DEFAULT_OPTS='
+        --color fg:-1,bg:-1,hl:2,fg+:254,bg+:235,hl+:1
+        --color info:136,prompt:136,pointer:230,marker:230,spinner:136
+        --height 50% --layout=reverse --border'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
