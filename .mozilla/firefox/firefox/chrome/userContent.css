@@ -94,7 +94,6 @@ button#onboarding-overlay-button.onboarding-watermark,
 
   /* Gmail logo */
   img[src="//www.gmail.com/mail/help/images/logonew.gif"] {
-    /* visibility: hidden; */
     margin-left: 0.2rem;
     margin-right: 2rem;
   }
@@ -107,19 +106,23 @@ button#onboarding-overlay-button.onboarding-watermark,
     max-width: 200px;
     position: relative;
     top: 15px;
-    left: 1100px;
-    color: var(--gmail-fg);
+    left: 84%;
+    color: var(--gmail-fg-sub);
     z-index: 1;
   }
   /* Hide everything in userbar except mail and logout */
-  #guser .gb4:not(:last-of-type) { display: none; }
+  #guser .gb4:not(:last-of-type),
+  #gbe > .gb4 {
+    display: none !important;
+  }
+  nobr { color: transparent !important; } /* Seperation character */
+  nobr b { color: var(--gmail-fg-sub); margin-right: -1.2rem; } /* User email */
   #guser a.gb4 { color: var(--gmail-fg-sub) !important; }
 
   /* Main content */
   body > table:last-child tbody tr > td {
     font-size:   var(--gmail-mail-fontsize) !important;
     line-height: var(--gmail-mail-lineheight) !important;
-    /* vertical-align: middle !important; */
   }
   /* Increase height of title email to avoid being hidden */
   .th .ts { height: var(--gmail-mail-lineheight) !important; }
@@ -143,11 +146,6 @@ button#onboarding-overlay-button.onboarding-watermark,
   }
 
   /* Styling label title on left menu */
-  /* .lb {
-    max-height: 295px;
-    display: block;
-    overflow: auto;
-  } */
   .lb h2:first-of-type font {
     color: var(--gmail-fg-sub) !important;
     text-decoration: underline;
@@ -193,31 +191,5 @@ button#onboarding-overlay-button.onboarding-watermark,
   .ts font:last-child {
     color: var(--gmail-fg-desc) !important;
   }
-  /* Make mail box list scrollable */
-  /* body > table:last-child > tbody > tr > td:last-child > table:first-of-type > tbody > tr > td:last-child > form > table:nth-child(odd) {
-    max-height: 500px !important;
-    display: block;
-    overflow-y: auto;
-  } */
-  /* hide some googe bottom link, ip div and learn more in view box */
-  /* .ft > tbody > tr:nth-child(odd),
-  .ft > tbody > tr:nth-child(2) > td > div:first-of-type,
-  .ft > tbody > tr:nth-child(2) > td > div > table td div a:last-of-type{
-    display: none;
-  } */
-  /* .bm { background: none; } */
-  /* remove change view (standard/html) box style */
-  /* .ft > tbody > tr:nth-child(2) > td > div > table td {
-    background: none !important;
-    border: none !important;
-    margin: none !important;
-    line-height: unset !important;
-  } */
-  /* Made current usage and change view box on same line */
-  /* .ft > tbody > tr:nth-child(2) > td {
-    display: flex;
-    justify-content: space-between;
-    width: 1100px;
-  } */
 
 }
