@@ -23,7 +23,6 @@ firefox
 firefox-developer-edition
 flameshot
 fzf
-gifski
 gimp
 git
 grub
@@ -36,6 +35,7 @@ iwd
 jq
 keepassxc
 libmad
+linux-headers
 mpv
 mupdf
 namcap
@@ -49,7 +49,6 @@ npm
 ntp
 obs-studio
 p7zip
-peek
 picard
 pkgfile
 pulseaudio-alsa
