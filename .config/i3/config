@@ -28,13 +28,14 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Disable title bar
-default_border pixel 1
+default_border pixel 0
 
 # Center title bar (tabbed)
 title_align center
 
 # Enable workspace back and forth
 workspace_auto_back_and_forth yes
+workspace_layout tabbed
 
 # Gaps
 gaps inner 3
@@ -42,24 +43,25 @@ gaps inner 3
 # Config workspace and window for specific program
 for_window[class="Alacritty"] floating enable, move position 50 px 25 px, focus
 for_window[class="feh"] floating enable
+for_window[class="Peek"] floating enable
+for_window[title="^DevTools"] floating enable
 assign[class="Chromium"] $ws1
     for_window[workspace=$ws1] focus
     workspace $ws1 gaps inner 3
 assign[class="Firefox"] $ws2
+assign [title="^KeePassXC$"] $ws2
     for_window[workspace=$ws2] focus
     workspace $ws2 gaps inner 3
 assign [title="Code*"] $ws3
 assign [class="Code"] $ws3
     for_window [workspace=$ws3] focus
 assign [class="mpv"] $ws4
-    for_window [workspace=$ws4] layout tabbed, focus
+    for_window [workspace=$ws4] focus
     workspace $ws4 gaps inner 0
-assign [title="^KeePassXC$"] $ws5
 assign [class="Gucharmap"] $ws5
-    for_window [workspace=$ws5] layout tabbed
 assign [title="GIMP Startup"] $ws6
 assign [class="Gimp"] $ws6
-    for_window [workspace=$ws6] layout tabbed, focus
+    for_window [workspace=$ws6] focus
     workspace $ws6 gaps inner 0
 
 ### Autostart
@@ -93,7 +95,8 @@ bindsym $mod+c layout tabbed
 bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
-bindsym $mod++Mod1+space floating toggle
+bindsym $mod+Mod1+space floating toggle
+bindsym $mod+z floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -177,7 +180,7 @@ bindsym $mod+T exec alacritty
 
 # Rofi
 bindsym $mod+x exec --no-startup-id rofi -modi drun -show drun
-bindsym $mod+z exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 # Nemo
 bindsym $mod+e exec nemo
@@ -267,6 +270,18 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+F4 mode "$mode_system"
+
+set $lauch_app (Z) Chromium, (X) KeepassXC, (C) VSCode
+mode "$lauch_app" {
+    bindsym c exec --no-startup-id chromium, mode "default"
+    bindsym x exec --no-startup-id keepassxc, mode "default"
+    bindsym v exec --no-startup-id code --extensions-dir ~/.local/share/vscode-oss/extensions, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+m mode "default"
+}
+bindsym $mod+m mode "$lauch_app"
 
 # split in horizontal/vertical orientation
 # bindsym $mod+c split h
