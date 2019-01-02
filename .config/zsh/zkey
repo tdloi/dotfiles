@@ -1,3 +1,6 @@
+# remap caps to escape to ensure it will always work
+setxkbmap -option caps:escape
+
 # Using vimmode
 bindkey -v
 
