@@ -13,7 +13,7 @@ client.background       #404552
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-floating_maximum_size 0 x 750
+floating_maximum_size 0 x 768
 
 # Define names for default workspaces
 set $ws1 "1"
@@ -44,7 +44,6 @@ gaps inner 3
 for_window[class="Alacritty"] floating enable, move position 50 px 25 px, focus
 for_window[class="feh"] floating enable
 for_window[class="Peek"] floating enable
-for_window[title="^DevTools"] floating enable
 assign[class="Chromium"] $ws1
     for_window[workspace=$ws1] focus
     workspace $ws1 gaps inner 3
@@ -271,10 +270,11 @@ mode "$mode_system" {
 }
 bindsym $mod+F4 mode "$mode_system"
 
-set $lauch_app (Z) Chromium, (X) KeepassXC, (C) VSCode
+set $lauch_app (X) KeepassXC, (C) Chromium, (V) VSCode
 mode "$lauch_app" {
-    bindsym c exec --no-startup-id chromium, mode "default"
     bindsym x exec --no-startup-id keepassxc, mode "default"
+    bindsym c exec --no-startup-id chromium, mode "default"
+    bindsym z exec --no-startup-id chromium, mode "default"
     bindsym v exec --no-startup-id code --extensions-dir ~/.local/share/vscode-oss/extensions, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
