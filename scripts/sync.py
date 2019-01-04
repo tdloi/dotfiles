@@ -18,6 +18,7 @@ LIST_FILE_SYMLINK = [
 LIST_CONFIG_SYMLINK = [
     "alacritty",
     "cmus",
+    "dunst",
     "fcitx",
     "feh",
     "fontconfig",

@@ -1,0 +1,147 @@
+### Full config info:
+#   https://github.com/dunst-project/dunst/blob/master/dunstrc
+###
+
+[global]
+    monitor = 0
+    follow = mouse
+
+    geometry = "250x7-30+20"
+    shrink = no
+    indicate_hidden = yes
+    sort = yes
+
+    transparency = 0
+    notification_height = 0
+    separator_height = 1
+    separator_color = frame
+    padding = 8
+    horizontal_padding = 8
+    idle_threshold = 120
+
+    ### Text ###
+
+    font = Fantasque Sans Mono 10
+    line_height = 5
+
+    markup = full # PangoMarkupFormat
+    format = "<b>%s</b>\n%b"
+    alignment = left
+
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+
+    stack_duplicates = false
+    hide_duplicate_count = true
+    show_indicators = yes
+
+    ### Icons ###
+
+    icon_position = left
+    max_icon_size = 16
+    icon_path = ~/.icons/Pettanko/16x16/status/:~/.icons/Pettanko/16x16/devices/
+
+    ### History ###
+
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/firefox -new-tab
+
+    always_run_script = true
+
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+
+[frame]
+    width = 2
+
+[shortcuts]
+    close = ctrl+space
+    close_all = Escape
+
+
+[urgency_low]
+    background = "#333333"
+    foreground = "#efefef"
+    frame_color = "#3B7C87"
+    timeout = 3
+
+[urgency_normal]
+    background = "#333333"
+    foreground = "#efefef"
+    frame_color = "#5B8234"
+    timeout = 5
+
+[urgency_critical]
+    background = "#333333"
+    foreground = "#efefef"
+    frame_color = "#B7472A"
+    timeout = 7
+
+
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+#
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[history-ignore]
+#    # This notification will not be saved in history
+#    summary = "foobar"
+#    history_ignore = yes
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+# vim: ft=cfg

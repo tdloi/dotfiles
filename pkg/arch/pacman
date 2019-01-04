@@ -8,6 +8,7 @@ cmus
 code
 docker
 docker-compose
+dunst
 efibootmgr
 exa
 fcitx
