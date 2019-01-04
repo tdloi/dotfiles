@@ -238,20 +238,23 @@ bindsym $mod+Control+r mode "resize_big"
 mode "move container" {
         bindsym 0 move position 20 px 20 px, mode "default"
         bindsym 1 move [absolute] position center, mode "default"
-        bindsym h move left 30px or 30 ppt
-        bindsym j move bottom 30px or 30 ppt
-        bindsym k move top 30px or 30 ppt
-        bindsym l move right 30px or 30 ppt
+        bindsym h move left 30px
+        bindsym j move down 30px
+        bindsym k move up 30px
+        bindsym l move right 30px
 
         # same bindings, but for the arrow keys
-        bindsym Left move left 30px or 30 ppt
-        bindsym Down move bottom 30px or 30 ppt
-        bindsym Up move top 30px or 30 ppt
-        bindsym Right move right 30px or 30 ppt
+        bindsym Left move left 30px
+        bindsym Down move down 30px
+        bindsym Up move up 30px
+        bindsym Right move right 30px
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+Tab mode "default"
+        bindsym Mod1+Tab mode "default"
+        bindsym $mod+m mode "default"
         bindsym $mod+Control+m mode "default"
 }
 bindsym $mod+Mod1+m mode "move container"
