@@ -13,8 +13,22 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+powerlevel9k_python() {
+    [[ ! -z "$VIRTUAL_ENV" ]] && local virtualenv="${"$(basename $VIRTUAL_ENV)":0:12}... | "
+    [ $(pyenv version-name) != 'system' ] && local pyenv="$(pyenv version-name) \ue606";
+    echo $virtualenv$pyenv
+}
+POWERLEVEL9K_CUSTOM_PYTHON="powerlevel9k_python"
+POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="deepskyblue3"
+powerlevel9k_node() {
+    local nodever=$(nvm current)
+    # [ $nodever == "system" ] && nodever=$(pacman -Q nodejs | awk -F' ' '{print $2 }')
+    [ -n "$(ls -a package.json 2>/dev/null)" ] && echo "$nodever \ue718"
+}
+POWERLEVEL9K_CUSTOM_NODE="powerlevel9k_node"
+POWERLEVEL9K_CUSTOM_NODE_BACKGROUND="lightgoldenrod1"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(pyenv vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_node custom_python vcs vi_mode)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=">_ "
