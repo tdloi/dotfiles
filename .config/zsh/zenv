@@ -9,6 +9,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# poetry
+export PATH="$HOME/.config/poetry/bin:$PATH"
+
 # pylint
 export PYLINTHOME="$XDG_CONFIG_HOME/pylint"
 
@@ -18,7 +21,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # httpie
 export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
