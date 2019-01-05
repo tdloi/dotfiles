@@ -39,7 +39,6 @@ keepassxc
 libmad
 linux-headers
 mpv
-mupdf
 namcap
 nemo
 nemo-fileroller
@@ -77,6 +76,7 @@ xf86-video-intel
 xorg-xinit
 xss-lock
 yarn
+zathura-pdf-mupdf
 zeal
 zsh
 zsh-autosuggestions

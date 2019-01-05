@@ -1,0 +1,29 @@
+set selection-clipboard clipboard
+
+set page-padding 2
+set scroll-step 160
+
+set     statusbar-bg            "#2f2f2f"
+set     inputbar-bg             "#212121"
+set     recolor-darkcolor       "#f9fbfa"
+set     recolor-lightcolor      "#001527"
+set     recolor-reverse-video   true
+set     recolor-keephue         true
+
+map                     =           zoom in
+map     [fullscreen]    =           zoom in
+map                     0           zoom
+map     [fullscreen]    0           zoom
+
+map                     ,           navigate previous
+map     [fullscreen]    ,           navigate previous
+map                     <Left>      navigate previous
+map     [fullscreen]    <Left>      navigate previous
+map                     .           navigate next
+map     [fullscreen]    .           navigate next
+map                     <Right>     navigate next
+map     [fullscreen]    <Right>     navigate next
+map                     c           recolor
+map     [fullscreen]    c           recolor
+map                     <A-f>       toggle_fullscreen
+map     [fullscreen]    <A-f>       toggle_fullscreen

@@ -27,6 +27,7 @@ LIST_CONFIG_SYMLINK = [
     "pulse",
     "redshift",
     "rofi",
+    "zathura",
     "zsh",
 ]
 
