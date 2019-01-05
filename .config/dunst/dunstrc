@@ -6,7 +6,7 @@
     monitor = 0
     follow = mouse
 
-    geometry = "250x7-30+20"
+    geometry = "300x10-30+20"
     shrink = no
     indicate_hidden = yes
     sort = yes
@@ -40,7 +40,7 @@
     ### Icons ###
 
     icon_position = left
-    max_icon_size = 16
+    max_icon_size = 32
     icon_path = ~/.icons/Pettanko/16x16/status/:~/.icons/Pettanko/16x16/devices/
 
     ### History ###
