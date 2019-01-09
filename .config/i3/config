@@ -6,9 +6,9 @@ set $i3dir ~/.config/i3
 font pango:Inconsolata 10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #21252b #353944 #dfdfdf #2e9ef4   #285577
+client.focused          #21252b #A8CCA8 #2F343F #2e9ef4   #285577
 client.focused_inactive #333333 #404552 #dfdfdf #484e50   #5f676a
-client.unfocused        #333333 #595e6b #dfdfdf #292d2e   #222222
+client.unfocused        #414F58 #2f343f #dfdfdf #292d2e   #222222
 client.background       #404552
 
 # Use Mouse+$mod to drag floating windows to their wanted position
