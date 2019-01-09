@@ -18,6 +18,7 @@
     padding = 8
     horizontal_padding = 8
     idle_threshold = 120
+    frame_width = 2
 
     ### Text ###
 
@@ -59,8 +60,6 @@
     class = Dunst
     startup_notification = false
 
-[frame]
-    width = 2
 
 [shortcuts]
     close = ctrl+space
@@ -86,6 +85,9 @@
     timeout = 7
 
 
+[flameshot]
+    appname = "flameshot"
+    format = ""
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -143,5 +145,3 @@
 #    appname = Pidgin
 #    summary = *twitter.com*
 #    urgency = normal
-#
-# vim: ft=cfg
