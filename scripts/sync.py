@@ -42,7 +42,7 @@ LIST_FOLDER_IGNORE = [
 ]
 
 HOME = os.getenv('HOME')
-HOME_CONFIG = os.getenv('HOME_CONFIG')
+HOME_CONFIG = os.path.join(HOME, '.config')
 DOTFILES = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 DOTFILES_CONFIG = os.path.join(DOTFILES, '.config')
 
@@ -93,7 +93,7 @@ for fi in LIST_CONFIG:
 
     if os.path.isdir(path):
         # Use fd for life easier
-        lsdir, err = Popen(['fd', '--type', 'file', '.', path],
+        lsdir, err = Popen(['fd', '-H', '--type', 'file', '.', path],
                            stdout=PIPE).communicate()
         lsdir = lsdir.decode().strip().split('\n')
 
