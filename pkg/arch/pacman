@@ -1,6 +1,5 @@
 alacritty
 alsa-utils
-anki
 arc-gtk-theme
 byzanz
 chromium
@@ -11,6 +10,7 @@ docker-compose
 dunst
 efibootmgr
 exa
+expac
 fcitx
 fcitx-configtool
 fcitx-gtk2
@@ -58,7 +58,6 @@ python-pip
 ranger
 redshift
 rofi
-rust
 termite
 tmux
 transmission-qt
@@ -67,6 +66,7 @@ ttf-roboto
 unrar
 vim
 wget
+wireguard-arch
 wireguard-tools
 wireshark-qt
 wpa_supplicant
