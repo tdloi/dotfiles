@@ -19,7 +19,7 @@ install=${pkgname}.install
 
 prepare() {
   sed -i -e 's/Exec=/Exec=zsh -c "/' ${_pkgname}_${pkgver}_${CARCH}/resource/applications/wps*
-  sed -i -e 's/%f/-style Cleanlook \&\& rm -rf .kingsoft" %f/' ${_pkgname}_${pkgver}_${CARCH}/resource/applications/wps*
+  sed -i -e 's/%f/-style Cleanlook %f \&\& rm -rf .kingsoft"/' ${_pkgname}_${pkgver}_${CARCH}/resource/applications/wps*
   rm ${_pkgname}_${pkgver}_${CARCH}/resource/applications/appurl.desktop
   # Avoid can't translate pathname to UTF-8 issue
   rm -rf ${_pkgname}_${pkgver}_${CARCH}/office6/mui/zh_CN
