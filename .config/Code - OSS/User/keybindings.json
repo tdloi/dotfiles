@@ -55,6 +55,16 @@
         "key": "alt+j",
         "command": "editor.action.joinLines"
     },
+    // Completion
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-acceptSelectedSuggestion"
+    },
 
     // Zoom
     {
