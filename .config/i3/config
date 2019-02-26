@@ -54,6 +54,7 @@ assign [title="^KeePassXC$"] $ws2
 assign [title="Code*"] $ws3
 assign [class="Code"] $ws3
     for_window [workspace=$ws3] focus
+    workspace $ws3 gaps inner 0
 assign [class="mpv"] $ws4
     for_window [workspace=$ws4] focus
     workspace $ws4 gaps inner 0
