@@ -30,8 +30,8 @@ font-0 = Inconsolata:size=10;2
 font-1 = RobotoMono Nerd Font:pixelsize=9;2
 
 modules-left = i3
-modules-center = cmus-previous cmus-next cmus
-modules-right = audio xbacklight memory cpu wlan battery date
+modules-center = cmus
+modules-right = cmus-previous cmus-next audio xbacklight memory cpu wlan battery date
 
 ;Disable system tray
 tray-position =

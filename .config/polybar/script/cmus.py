@@ -18,8 +18,15 @@ elif 'paused' in output[0]:
     print('paused')
 else:
     name, duration, current = output[1:4]
-    name = name.strip().split('/')[-1]
-    name = ''.join(name.split('.')[:-1])
+    _name = [_ for _ in output if 'tag title' in _][0]
+
+    # if 'tag title' does not exist, fall back to filename
+    if _name:
+        name = _name.replace('tag title ', '').strip()
+    else:
+        name = name.strip().split('/')[-1]
+        name = ''.join(name.split('.')[:-1])
+
     duration = duration.strip().split(' ')[-1]
     current = current.strip().split(' ')[-1]
 
