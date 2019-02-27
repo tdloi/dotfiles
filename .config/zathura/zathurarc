@@ -1,7 +1,8 @@
 set selection-clipboard clipboard
 
 set page-padding 2
-set scroll-step 160
+set scroll-step 100
+set smooth-scroll true
 
 set     statusbar-bg            "#2f2f2f"
 set     inputbar-bg             "#212121"
