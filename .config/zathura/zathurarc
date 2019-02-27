@@ -10,10 +10,12 @@ set     recolor-lightcolor      "#001527"
 set     recolor-reverse-video   true
 set     recolor-keephue         true
 
+# zI, zO, z0
+# Zoom in, out or to the original size
 map                     =           zoom in
 map     [fullscreen]    =           zoom in
-map                     0           zoom
-map     [fullscreen]    0           zoom
+map                     <A-0>           zoom
+map     [fullscreen]    <A-0>           zoom
 
 map                     ,           navigate previous
 map     [fullscreen]    ,           navigate previous
