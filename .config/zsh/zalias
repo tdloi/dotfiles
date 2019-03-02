@@ -17,6 +17,13 @@ alias d='sudo docker'
 alias dc='sudo docker-compose'
 alias dclean='d rmi $(d images -q --filter "dangling=true")'
 
+# yarn
+alias y='yarn'
+alias ys='yarn start'
+
+# git
+alias g='git'
+
 # WireGuard
 alias wgu='wg-quick up'
 alias wgd='wg-quick down $(wg show interfaces)'

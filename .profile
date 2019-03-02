@@ -22,5 +22,6 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  eval $(ssh-agent -s)
   exec startx
 fi
