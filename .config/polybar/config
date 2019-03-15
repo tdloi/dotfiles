@@ -28,6 +28,7 @@ module-margin-right = 1
 
 font-0 = Inconsolata:size=10;2
 font-1 = RobotoMono Nerd Font:pixelsize=9;2
+font-2 = "Noto Sans CJK JP:size=9;3"
 
 modules-left = i3
 modules-center = cmus
@@ -93,6 +94,7 @@ interval = 1
 type = custom/script
 exec = ~/.config/polybar/script/cmus.py
 exec-if = cmus-remote -Q
+label-font = 3
 click-left = if cmus-remote -Q | grep -q 'playing'; then cmus-remote -u; else cmus-remote -p; fi
 interval = 1
 
