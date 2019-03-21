@@ -96,7 +96,7 @@ bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Mod1+space floating toggle
-bindsym $mod+z floating toggle
+bindsym $mod+slash floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -274,22 +274,33 @@ mode "$mode_system" {
 }
 bindsym $mod+F4 mode "$mode_system"
 
-set $lauch_app (X) KeepassXC, (C) Chromium, (V) VSCode
+set $lauch_app [K]eepassXC, [C]hromium, [V]SCode, [X] Chromium Icognito
 mode "$lauch_app" {
-    bindsym x exec --no-startup-id keepassxc, mode "default"
+    bindsym x exec --no-startup-id chromium -incognito, mode "default"
     bindsym c exec --no-startup-id chromium, mode "default"
-    bindsym z exec --no-startup-id chromium, mode "default"
     bindsym v exec --no-startup-id code --extensions-dir ~/.local/share/vscode-oss/extensions, mode "default"
+    bindsym k exec --no-startup-id keepassxc, mode "default"
+    # bindsym g exec --no-startup-id chromium, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym space mode "default"
+    bindsym $mod+z mode "default"
     bindsym $mod+m mode "default"
 }
+bindsym $mod+z mode "$lauch_app"
 bindsym $mod+m mode "$lauch_app"
 
 # split in horizontal/vertical orientation
-# bindsym $mod+c split h
-# bindsym $mod+v split v
+set $split_mode Split: [h]orizontal / [v]ertical
+mode "$split_mode" {
+    bindsym h split h, mode "default"
+    bindsym v split v, mode "default"
+}
+bindsym $mod+s mode "$split_mode"
+bindsym $mod+Control+h split h
+bindsym $mod+Control+v split v
+
 # focus the parent/child container
 # bindsym $mod+a focus parent
 # bindsym $mod+d focus child
