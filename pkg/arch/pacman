@@ -50,6 +50,7 @@ npm
 ntp
 numlockx
 obs-studio
+openssh
 p7zip
 picard
 pkgfile
@@ -59,6 +60,10 @@ ranger
 redshift
 rofi
 termite
+texlive-core
+texlive-langextra
+texlive-latexextra
+texlive-science
 tmux
 transmission-qt
 ttf-inconsolata
