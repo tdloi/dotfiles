@@ -17,10 +17,10 @@ POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="deepskyblue3"
 powerlevel9k_node() {
     local nodever="$(nvm current)"
     [ -n "$(ls -a package.json 2>/dev/null)" ] &&
-        if [ $nodever == "system" ]; then
-            echo "\ue718"
+        if [ $nodever != "system" ]; then
+            echo "${nodever:0:-2} \ue718"
         else
-            echo "$nodever \ue718"
+            echo "\ue718"
         fi;
 }
 POWERLEVEL9K_CUSTOM_NODE="powerlevel9k_node"
