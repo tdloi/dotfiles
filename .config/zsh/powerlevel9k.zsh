@@ -1,0 +1,72 @@
+# getColorCode background/foreground
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+
+powerlevel9k_python() {
+    if [ $(pyenv version-name) != 'system' ]; then
+        local pyenv="%{%F{black}%}${"$(pyenv version-name)":0:3}";
+        local virtualenv="\ue606 ";
+    fi;
+    [[ ! -z "$VIRTUAL_ENV" ]] && virtualenv="%{%F{yellow2}%}\ue606 "
+    echo -n $virtualenv$pyenv
+}
+POWERLEVEL9K_CUSTOM_PYTHON="powerlevel9k_python"
+POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="deepskyblue3"
+
+powerlevel9k_node() {
+    local nodever="$(nvm current)"
+    [ -n "$(ls -a package.json 2>/dev/null)" ] &&
+        if [ $nodever == "system" ]; then
+            echo "\ue718"
+        else
+            echo "$nodever \ue718"
+        fi;
+}
+POWERLEVEL9K_CUSTOM_NODE="powerlevel9k_node"
+POWERLEVEL9K_CUSTOM_NODE_BACKGROUND="lightgoldenrod1"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_node custom_python vcs vi_mode)
+
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=">_ "
+
+## dir
+POWERLEVEL9K_HOME_ICON="\ue217 "
+POWERLEVEL9K_HOME_SUB_ICON="\uf114 "
+POWERLEVEL9K_ETC_ICON=''
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+## vcs
+POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
+POWERLEVEL9K_VCS_SHORTEN_LENGTH=5
+POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=10
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch)
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='rosybrown'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='tan'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='lightslateblue'
+
+POWERLEVEL9K_VCS_HIDE_TAGS="true"
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=''
+POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=''
+POWERLEVEL9K_VCS_STAGED_ICON=''
+POWERLEVEL9K_VCS_STASH_ICON=''
+POWERLEVEL9K_VCS_SVN_ICON=''
+POWERLEVEL9K_VCS_TAG_ICON=''
+POWERLEVEL9K_VCS_UNSTAGED_ICON=''
+POWERLEVEL9K_VCS_UNTRACKED_ICON=''
+
+### vi_mode
+POWERLEVEL9K_VI_INSERT_MODE_STRING="INS"
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="NOR"
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='palegreen3'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='black'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='mediumpurple4'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='black'
+
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
