@@ -9,7 +9,6 @@
         "command": "workbench.action.terminal.focus",
         "when": "editorFocus"
     },
-
     {
         "key": "ctrl+'",
         "command": "workbench.action.terminal.focusNext",
@@ -103,5 +102,15 @@
         "key": "capslock",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "extension.vim_ctrl+o",
+        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-extension.vim_ctrl+o",
+        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
     },
 ]

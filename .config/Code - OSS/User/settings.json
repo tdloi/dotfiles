@@ -27,6 +27,7 @@
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
+    "terminal.integrated.splitCwd": "workspaceRoot",
 
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [ 80, 100, 120 ],
@@ -49,9 +50,11 @@
     "vim.startInInsertMode": true,
     "vim.overrideCopy": false,
     "vim.useCtrlKeys": false,
+    "vim.sneak": true,
     "vim.leader": "<space>",
     "vim.handleKeys": {
-        "<C-v>": true
+        "<C-v>": true,
+        "<C-o>": true,
     },
     "vim.normalModeKeyBindingsNonRecursive": [
         {
