@@ -1,7 +1,7 @@
 alacritty
 alsa-utils
+anki
 arc-gtk-theme
-byzanz
 chromium
 cmus
 code
@@ -13,10 +13,8 @@ exa
 expac
 fcitx
 fcitx-configtool
-fcitx-gtk2
 fcitx-gtk3
 fcitx-mozc
-fcitx-qt4
 fcitx-qt5
 fcitx-unikey
 fd
@@ -32,6 +30,7 @@ gucharmap
 htop
 httpie
 imagemagick
+imv
 intel-ucode
 iwd
 jq
@@ -53,13 +52,14 @@ obs-studio
 openssh
 p7zip
 picard
+piper
 pkgfile
 pulseaudio-alsa
 python-pip
 ranger
 redshift
 rofi
-termite
+sigil
 texlive-core
 texlive-langextra
 texlive-latexextra
@@ -77,12 +77,12 @@ wireshark-qt
 wpa_supplicant
 xclip
 xed
+xf86-input-keyboard
 xf86-video-intel
 xorg-xinit
 xss-lock
 yarn
 zathura-pdf-mupdf
-zeal
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
