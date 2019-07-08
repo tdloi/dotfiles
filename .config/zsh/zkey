@@ -4,6 +4,10 @@ setxkbmap -option caps:escape
 # Using vimmode
 bindkey -v
 
+# Fix Home and End key not working
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+
 # Quick change directory
 rationalise-dot() {
   if [[ $LBUFFER = *.. ]]; then
