@@ -2,56 +2,56 @@ export TERM="xterm-256color"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_CACHE_HOME="$HOME"/.cache
 
 # pyenv
-export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$XDG_CONFIG_HOME"/pyenv
+export PATH="$PYENV_ROOT"/bin:$PATH
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
 # poetry
-export PATH="$HOME/.config/poetry/bin:$PATH"
+export PATH="$XDG_CONFIG_HOME"/poetry/bin:$PATH
 
 # pylint
-export PYLINTHOME="$XDG_CONFIG_HOME/pylint"
+export PYLINTHOME="$XDG_CONFIG_HOME"/pylint
 
 # npm
-export NPM_CONFIG_CACHE="$XDG_CONFIG_HOME/npm"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CONFIG_HOME"/npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 # rust
 export CARGO_HOME="$XDG_CONFIG_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-source $XDG_CONFIG_HOME/cargo/env
+[ -s "$XDG_CONFIG_HOME"/cargo/env ] && source "$XDG_CONFIG_HOME"/cargo/env
 
 # nvm
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+export NVM_DIR="$XDG_CONFIG_HOME"/nvm
+[ -s "$NVM_DIR"/nvm.sh ] && \. "$NVM_DIR"/nvm.sh --no-use
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # httpie
-export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
+export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME"/httpie
 
 # docker
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 # GPG
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 # vim
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+[ -s "$XDG_CONFIG_HOME"/vim/vimrc ] && export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 # Custom script
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="$XDG_DATA_HOME/npm/global/bin:$PATH"
-export PATH="$XDG_DATA_HOME/yarn/global/node_modules/.bin:$PATH"
+export PATH="$XDG_DATA_HOME"/npm/global/bin:$PATH
+export PATH="$XDG_DATA_HOME"/yarn/global/node_modules/.bin:$PATH
 
 # fzf
 export FZF_DEFAULT_OPTS='
