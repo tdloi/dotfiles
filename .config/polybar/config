@@ -136,6 +136,13 @@ interval = 3.0
 
 format-connected = <ramp-signal>
 ramp-signal-0 = ""
+ramp-signal-0-foreground = ${colors.red}
+ramp-signal-1 = ""
+ramp-signal-1-foreground = ${colors.orange}
+ramp-signal-2 = ""
+ramp-signal-2-foreground = ${colors.green-alt}
+ramp-signal-3 = ""
+ramp-signal-3-foreground = ${colors.green}
 
 format-disconnected = Wifi disconnected
 format-disconnected-foreground = ${colors.black}
