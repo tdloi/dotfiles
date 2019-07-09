@@ -10,7 +10,7 @@ comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps i3
 3. [Browser](#browser)
 4. [IDE - Editor](#ide---editor)
 5. [Dev](#dev)
-6. [Viewer - Player](#viewer---player)
+6. [Viewer - Player - Recorder](#viewer---player--recorder)
 7. [Fonts](#fonts)
 8. [Utils](#utils)
 9. [Other](#other)
@@ -49,7 +49,7 @@ comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps i3
 - httpie
 
 
-### Viewer - Player
+### Viewer - Player - Recorder
 - feh (images)
 - imv (gif)
 - mpv (video)
@@ -59,6 +59,8 @@ comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps i3
 - ranger <sup>terminal</sup> (files)
 - nemo
     + nemo-fileroller
+- OBS studio
+- peek (gif) [*require compton to work in i3*]
 
 ### Fonts
 - noto-fonts-cjk
@@ -74,9 +76,11 @@ comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps i3
 - [exa](https://github.com/ogham/exa)
 - fcitx (input)
 - piper (mouse color led)
+- plank (menu) [*not work in i3*]
 
 ### Others
 - [polybar](https://github.com/polybar/polybar)
+    + wireless_tools: Wireless support
 - [rofi](https://github.com/davatorium/rofi)
 - [anki](https://apps.ankiweb.net/)
 - texlive-* (latex)

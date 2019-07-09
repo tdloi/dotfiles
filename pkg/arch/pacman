@@ -51,9 +51,11 @@ numlockx
 obs-studio
 openssh
 p7zip
+peek
 picard
 piper
 pkgfile
+plank
 pulseaudio-alsa
 python-pip
 ranger
@@ -73,6 +75,7 @@ vim
 wget
 wireguard-arch
 wireguard-tools
+wireless_tools
 wireshark-qt
 wpa_supplicant
 xclip
