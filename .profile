@@ -15,6 +15,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export ELECTRON_TRASH=gio
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Ensure that zshenv will be sourced
 [ -f ~/.zshenv ] && . ~/.zshenv
@@ -25,6 +26,5 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  eval $(ssh-agent -s)
   exec startx
 fi
