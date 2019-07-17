@@ -36,6 +36,7 @@ iwd
 jq
 keepassxc
 libmad
+lightdm-webkit-theme-litarvan
 linux-headers
 mpv
 namcap
@@ -83,7 +84,6 @@ xed
 xf86-input-keyboard
 xf86-video-intel
 xorg-xinit
-xss-lock
 yarn
 zathura-pdf-mupdf
 zsh

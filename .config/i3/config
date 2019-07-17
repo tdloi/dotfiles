@@ -67,8 +67,6 @@ assign [class="Gimp"] $ws6
 ### Autostart
 exec --no-startup-id dropbox
 exec --no-startup-id polybar -rq tdloi
-# exec --no-startup-id xautolock -time 1 -locker "i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)"
-exec_always --no-startup-id xss-lock -- i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/pictures/wallpaper/*
 exec_always --no-startup-id fcitx
 
@@ -79,12 +77,6 @@ bindsym $mod+Mod1+u reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+Mod1+u restart
-
-
-# i3lock
-# NOTICE: Convert for all image in folder to stretched screen png images with imagemagick
-# fd . images/ -x convert {} -resize $(xdpyinfo | awk '/dimensions/{print $2}')\! output/{/.}.png
-bindsym $mod+Control+l exec i3lock -et -i $(fd 'png' $i3dir/lockscreen | shuf -n1)
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -262,7 +254,6 @@ bindsym $mod+Mod1+m mode "move container"
 
 set $mode_system System (E)xit, (R)eboot, (S)uspend, (P)oweroff
 mode "$mode_system" {
-    # xss-lock already locked on suspend mode
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
