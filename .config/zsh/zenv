@@ -20,7 +20,7 @@ export PATH="$XDG_CONFIG_HOME"/poetry/bin:$PATH
 export PYLINTHOME="$XDG_CONFIG_HOME"/pylint
 
 # npm
-export NPM_CONFIG_CACHE="$XDG_CONFIG_HOME"/npm
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 # rust
@@ -30,7 +30,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME"/nvm
-[ -s "$NVM_DIR"/nvm.sh ] && \. "$NVM_DIR"/nvm.sh --no-use
+[ -s "$NVM_DIR"/nvm.sh ] && . "$NVM_DIR"/nvm.sh --no-use
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # httpie
@@ -50,8 +50,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="$XDG_DATA_HOME"/npm/global/bin:$PATH
-export PATH="$XDG_DATA_HOME"/yarn/global/node_modules/.bin:$PATH
+export PATH="$XDG_DATA_HOME"/yarn/global/bin:$PATH
 
 # fzf
 export FZF_DEFAULT_OPTS='
