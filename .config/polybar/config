@@ -7,6 +7,8 @@ green = #55aa55
 green-alt = #89ca78
 red = #FC3C3C
 orange = #f5a70a
+orange-alt = #b57d0b
+grey = #949191
 
 [bar/tdloi]
 bottom = true
@@ -29,12 +31,14 @@ module-margin-right = 1
 font-0 = Inconsolata:size=10;2
 font-1 = RobotoMono Nerd Font:pixelsize=9;2
 font-2 = "Noto Sans CJK JP:size=9;3"
+font-3 = Inconsolata:size=9;2
 
 modules-left = i3
 modules-center = cmus
-modules-right = cmus-previous cmus-next audio xbacklight memory cpu wlan battery date
+modules-right = cmus-previous cmus-next audio xbacklight memory cpu wired-network wireless-network battery date
 
-tray-position = right
+;Disable system tray
+;tray-position =
 tray-padding = 5
 tray-maxsize = 12
 
@@ -68,15 +72,6 @@ exec =  if [ "$(curl -s https://am.i.mullvad.net/json | jq '.country')" != "\"My
 interval = 5
 
 
-[module/aur]
-type = custom/script
-exec = ~/.config/polybar/script/aur.sh
-exec-if = ! wget -q --spider https://ducduckgo.com
-format-prefix = " "
-interval = 18000
-click-left = ~/.config/polybar/script/aur-push.sh
-
-
 [module/cmus-previous]
 type = custom/script
 exec = echo "<"
@@ -100,13 +95,6 @@ click-left = if cmus-remote -Q | grep -q 'playing'; then cmus-remote -u; else cm
 interval = 1
 
 
-[module/xbacklight]
-type = internal/xbacklight
-format-prefix = " "
-enable-scroll = false
-# format-underline = ${colors.foreground}
-
-
 [module/audio]
 type = internal/pulseaudio
 format-volume-prefix = " "
@@ -116,25 +104,41 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.black}
 
 
+[module/xbacklight]
+type = internal/xbacklight
+format-prefix = " "
+
+
 [module/memory]
 type = internal/memory
-format-prefix = " "
-# format-underline = #8f70d4
+format-prefix = "RAM: "
+format-prefix-font = 4
+format-prefix-foreground = ${colors.grey}
+format-overline = #8f70d4
 
 
 [module/cpu]
 type = internal/cpu
 label = %percentage:2%%
-format-prefix = " "
-# format-underline = #c63134
+format-prefix = "CPU: "
+format-prefix-font = 4
+format-prefix-foreground = ${colors.grey}
+format-overline = #c63134
 
 
-[module/wlan]
+[module/wired-network]
+type = internal/network
+interface = eth1
+
+[module/wireless-network]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
+format-full-
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+format-connected-overline = ${colors.orange-alt}
 
-format-connected = <ramp-signal>
 ramp-signal-0 = ""
 ramp-signal-0-foreground = ${colors.red}
 ramp-signal-1 = ""
@@ -144,9 +148,8 @@ ramp-signal-2-foreground = ${colors.green-alt}
 ramp-signal-3 = ""
 ramp-signal-3-foreground = ${colors.green}
 
-format-disconnected = Wifi disconnected
+format-disconnected = Wifi disconneformat-full-cted
 format-disconnected-foreground = ${colors.black}
-# format-connected-underline = ${colors.orange}
 
 
 [module/battery]
@@ -157,6 +160,7 @@ full-at = 97
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
+format-full-overline = #1ba8f1
 
 format-full-prefix = " "
 format-full-prefix-foreground = #77C990
@@ -168,6 +172,7 @@ ramp-capacity-3 = 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.orange}
 ramp-capacity-foreground = ${colors.green-alt}
+ramp-capacity-overline = #1ba8f1
 
 animation-charging-0 = 
 animation-charging-foreground = ${colors.green-alt}
@@ -178,8 +183,7 @@ type = internal/date
 interval = 1
 
 label = %date% %time%
-label-foreground = ${colors.black-alt}
-label-background = ${colors.green}
+format-overline = ${colors.green}
 label-padding-right = 1
 
 ;date =
