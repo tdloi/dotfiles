@@ -10,6 +10,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # lightdm will set XAUTHORITY to /run/lightdm/$USER/xauthority
 # override XAUTHORITY will cause infinite login loop due to missing permission
 [[ -z "$XAUTHORITY" ]] && export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+# ICEAuthority
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -24,6 +26,9 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
 fi
+
+setxkbmap -option caps:escape
+numlockx
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
