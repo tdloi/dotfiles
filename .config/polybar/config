@@ -148,7 +148,7 @@ ramp-signal-2-foreground = ${colors.green-alt}
 ramp-signal-3 = ""
 ramp-signal-3-foreground = ${colors.green}
 
-format-disconnected = Wifi disconneformat-full-cted
+format-disconnected = Wifi disconneted
 format-disconnected-foreground = ${colors.black}
 
 
@@ -160,7 +160,8 @@ full-at = 97
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full-overline = #1ba8f1
+format-full-overline = #097cb8
+format-charging-overline = #385fab
 
 format-full-prefix = " "
 format-full-prefix-foreground = #77C990
@@ -172,7 +173,6 @@ ramp-capacity-3 = 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.orange}
 ramp-capacity-foreground = ${colors.green-alt}
-ramp-capacity-overline = #1ba8f1
 
 animation-charging-0 = 
 animation-charging-foreground = ${colors.green-alt}
