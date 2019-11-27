@@ -1,0 +1,13 @@
+[Unit]
+Description=RClone Sync Dropbox
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=rclone sync --update --log-file %E/rclone/rclone-dropbox.log --config %E/rclone/rclone.conf %h/cloud cloud-dropbox:
+ExecReload=/bin/kill -USR1 $MAINPID
+ExecStop=/usr/bin/pkill rclone
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
