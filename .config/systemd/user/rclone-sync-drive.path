@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox sync monitor
+
+[Path]
+PathChanged=%h/cloud
+PathModified=%h/cloud
+Unit=rclone-sync-drive.service
+
+[Install]
+WantedBy=multi-user.target
