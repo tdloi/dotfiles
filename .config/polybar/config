@@ -33,7 +33,7 @@ font-1 = RobotoMono Nerd Font:pixelsize=9;2
 font-2 = "Noto Sans CJK JP:size=9;3"
 font-3 = Inconsolata:size=9;2
 
-modules-left = i3
+modules-left = i3 vpn
 modules-center = cmus
 modules-right = cmus-previous cmus-next audio xbacklight memory cpu wired-network wireless-network battery date
 
@@ -68,9 +68,9 @@ label-focused-padding = 1
 
 [module/vpn]
 type = custom/script
-exec =  if [ "$(curl -s https://am.i.mullvad.net/json | jq '.country')" != "\"My Country\"" ]; then curl -s https://am.i.mullvad.net/json | jq '.country'; else echo ''; fi;
+exec =  x=$(curl -s https://am.i.mullvad.net/json) && [[ "$(echo $x | jq '.mullvad_exit_ip')" == 'false' ]] && echo 'Disconnected' || echo "$(echo $x | jq -r '.city') - $(echo $x | jq -r '.country')"
 interval = 5
-
+label =  %output%
 
 [module/cmus-previous]
 type = custom/script
