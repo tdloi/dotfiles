@@ -1,5 +1,5 @@
 [Unit]
-Description=Dropbox sync monitor
+Description=Drive sync monitor
 
 [Path]
 PathChanged=%h/cloud

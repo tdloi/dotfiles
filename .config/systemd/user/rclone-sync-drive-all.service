@@ -1,0 +1,13 @@
+[Unit]
+Description=RClone Sync Drive
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=rclone sync -v --log-file %E/rclone/rclone-drive.log --config %E/rclone/rclone.conf %h/cloud cloud-drive:
+ExecReload=/bin/kill -USR1 $MAINPID
+ExecStop=/usr/bin/pkill rclone
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
