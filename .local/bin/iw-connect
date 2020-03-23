@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# Shortcut for iwctl
+# Quickly connect to a Wifi network by passing Wifi name
+# otherwise, return list of available Wifi
+
+if [ -z "$1" ]; then
+    iwctl station wlp3s0 scan && iwctl station wlp3s0 get-networks;
+else
+    iwctl station wlp3s0 scan && iwctl station wlp3s0 get-networks > /dev/null && iwctl station wlp3s0 connect "$1"
+fi
