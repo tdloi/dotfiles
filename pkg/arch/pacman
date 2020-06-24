@@ -15,7 +15,6 @@ exa
 expac
 fcitx
 fcitx-configtool
-fcitx-gtk3
 fcitx-mozc
 fcitx-qt5
 fcitx-unikey
@@ -34,6 +33,7 @@ httpie
 imagemagick
 imv
 intel-ucode
+iputils
 iwd
 jq
 jsoncpp
@@ -42,13 +42,15 @@ leafpad
 lightdm-webkit-theme-litarvan
 linux-firmware
 linux-headers
+lshw
+lsof
 man-db
 mpv
 namcap
 nemo
 nemo-fileroller
 neofetch
-nftables
+netctl
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji
@@ -79,15 +81,14 @@ transmission-qt
 ttf-inconsolata
 ttf-roboto
 unrar
+usbutils
 vim
 wget
-wireguard-arch
 wireguard-tools
 wireless_tools
 wireshark-qt
 wpa_supplicant
 xclip
-xf86-input-keyboard
 xf86-video-intel
 xorg-xinit
 yarn
@@ -95,4 +96,4 @@ zathura-pdf-mupdf
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-zsh-theme-powerlevel9k
+zsh-theme-powerlevel10k
