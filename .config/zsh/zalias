@@ -1,6 +1,7 @@
 # Arc
 alias Syu='sudo pacman -Syu'
 alias Rns='sudo pacman -Rns'
+alias Qi='pacman -Qi'
 alias aur='rm -rf * && git reset --hard HEAD && git pull'
 
 alias poweroff='sudo poweroff'
@@ -21,15 +22,15 @@ alias d='docker'
 alias dc='docker-compose'
 alias dclean='d rmi $(d images -q --filter "dangling=true")'
 
-# yarn
+# javascript
+alias n='npm'
 alias y='yarn'
-alias ys='yarn start'
 
 # git
 alias g='git'
 
 # WireGuard
-alias wgu='wg-quick up'
+alias wgu='[[ -n "$(wg show interfaces)" ]] && wgd; wg-quick up'
 alias wgd='wg-quick down $(wg show interfaces)'
 
 # i3
