@@ -68,7 +68,7 @@ label-focused-padding = 1
 
 [module/vpn]
 type = custom/script
-exec =  x=$(curl -s https://am.i.mullvad.net/json) && [[ "$(echo $x | jq '.mullvad_exit_ip')" == 'false' ]] && echo 'Disconnected' || echo "$(echo $x | jq -r '.city') - $(echo $x | jq -r '.country')"
+exec =  ~/.config/polybar/script/wg
 interval = 5
 label =  %output%
 

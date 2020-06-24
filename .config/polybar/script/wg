@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z $(wg show interfaces) ]; then
+    echo 'Disconnected';
+else
+    x=$(curl -s https://am.i.mullvad.net/json)
+    echo "$(echo $x | jq -r '.city') - $(echo $x | jq -r '.country')"
+fi
