@@ -70,4 +70,4 @@ POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='black'
 POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='mediumpurple4'
 POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='black'
 
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
