@@ -15,7 +15,7 @@ alias vol="amixer sget Master | awk -F'[][]' '/dB/ { print \$2 }'"
 # python
 alias py='python'
 alias pips='pipenv shell'
-alias venv='source venv/bin/activate'
+alias venv='[[ -d "venv" ]] && source venv/bin/activate; [[ -d "env" ]] && source env/bin/activate'
 
 # docker
 alias d='docker'
@@ -34,7 +34,7 @@ alias wgu='[[ -n "$(wg show interfaces)" ]] && wgd; wg-quick up'
 alias wgd='wg-quick down $(wg show interfaces)'
 
 # i3
-alias i3lock="i3lock -et -i $(fd 'png' $XDG_CONFIG_HOME/i3/lockscreen | shuf -n1)"
+[ -x "$(command -v i3lock)" ] && alias i3lock="i3lock -et -i $(fd 'png' $XDG_CONFIG_HOME/i3/lockscreen | shuf -n1)"
 
 ### alias to change configs folder
 alias code='code --extensions-dir "$XDG_DATA_HOME"/vscode-oss/extensions'

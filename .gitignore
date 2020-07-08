@@ -1,0 +1,6 @@
+.config/zsh/cache
+.config/zsh/.histfile
+.config/zsh/.zcompdump
+.config/fcitx/*
+!.config/fcit/config
+!.config/fcit/profile

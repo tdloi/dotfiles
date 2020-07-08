@@ -66,6 +66,20 @@ label-separator-padding = 1
 label-focused-padding = 1
 
 
+[bar/tdloi-xubuntu]
+inherit = bar/tdloi
+monitor = ${env:MONITOR:HDMI-1}
+modules-left =
+modules-center = title
+modules-right = audio memory cpu date
+tray-position = left
+tray-maxsize = 24
+tray-detached = true
+tray-padding = 8
+
+[module/title]
+type = internal/xwindow
+
 [module/vpn]
 type = custom/script
 exec =  ~/.config/polybar/script/wg
@@ -128,13 +142,14 @@ format-overline = #c63134
 
 [module/wired-network]
 type = internal/network
-interface = eth1
+interface = enp2s0
+label-connected = %ifname%
+label-disconnected = not connected
 
 [module/wireless-network]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
-format-full-
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 format-connected-overline = ${colors.orange-alt}
