@@ -4,7 +4,7 @@ Description=Dropbox sync monitor
 [Path]
 PathChanged=%h/cloud
 PathModified=%h/cloud
-Unit=rclone-sync-dropbox.service
+Unit=rclone-dropbox.service
 
 [Install]
 WantedBy=multi-user.target

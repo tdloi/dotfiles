@@ -4,7 +4,7 @@ Description=Drive sync monitor
 [Path]
 PathChanged=%h/cloud
 PathModified=%h/cloud
-Unit=rclone-sync-drive.service
+Unit=rclone-drive.service
 
 [Install]
 WantedBy=multi-user.target
