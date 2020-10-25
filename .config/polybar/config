@@ -38,7 +38,7 @@ modules-center = cmus
 modules-right = cmus-previous cmus-next audio xbacklight memory cpu wired-network wireless-network battery date
 
 ;Disable system tray
-;tray-position =
+tray-position = left
 tray-padding = 5
 tray-maxsize = 12
 
