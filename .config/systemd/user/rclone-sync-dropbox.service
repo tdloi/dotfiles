@@ -4,7 +4,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=rclone sync -v --log-file %E/rclone/rclone-dropbox.log --config %E/rclone/rclone.conf %h/cloud cloud-dropbox:
+ExecStart=rclone sync -v --filter-from %h/cloud/.dropboxfilter --delete-excluded  --log-file %E/rclone/rclone-dropbox.log --config %E/rclone/rclone.conf %h/cloud cloud-dropbox:
 ExecReload=/bin/kill -USR1 $MAINPID
 ExecStop=/usr/bin/pkill rclone
 Restart=on-failure
