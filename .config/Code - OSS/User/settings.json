@@ -13,23 +13,17 @@
         "editorIndentGuide.activeBackground": "#55aa55",
     },
     "workbench.startupEditor": "none",
-    "workbench.panel.defaultLocation": "right",
     "workbench.statusBar.feedback.visible": false,
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
 
     "files.autoSave": "afterDelay",
-    "files.exclude": {
-        "**/venv": true,
-    },
     "explorer.openEditors.visible": 7,
-    "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Mono', 'Hacked Nerd Font Mono', monospace",
     "terminal.integrated.splitCwd": "workspaceRoot",
 
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [ 80, 100, 120 ],
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
@@ -37,7 +31,7 @@
     "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
-    "editor.codeLens": false,
+    "editor.codeLens": true,
 
     // code-runner
     "code-runner.runInTerminal": true,
@@ -120,6 +114,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.keymap": "none",
+    "git.terminalAuthentication": false,
 
     // python
     "python.linting.pylintEnabled": false,
