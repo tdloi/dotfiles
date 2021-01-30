@@ -30,7 +30,6 @@ alias y='yarn'
 alias g='git'
 
 # WireGuard
-alias wgu='[[ -n "$(wg show interfaces)" ]] && wgd; wg-quick up'
 alias wgd='wg-quick down $(wg show interfaces)'
 
 # i3

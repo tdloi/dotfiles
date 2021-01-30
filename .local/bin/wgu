@@ -1,0 +1,40 @@
+#!/bin/bash
+# Syntax sugar for wireguard connect
+# Fallback to default location if not specific or not found
+
+DEFAULT_LOCATION=sg
+
+connect-wg() {
+    if [[ $(wg show interfaces) ]]; then
+        wg-quick down $(wg show interfaces) 2> /dev/null;
+    fi;
+    wg-quick up $1;
+}
+
+print_info() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+
+if ! $(sudo -n true 2> /dev/null); then
+    print_info "sudo is required!";
+fi;
+
+location=$(sudo ls /etc/wireguard | grep $DEFAULT_LOCATION | sed 's/.conf//' | shuf -n 1);
+
+if [ -z "$1" ]; then
+    print_info "Using default location: $DEFAULT_LOCATION - $location";
+    connect-wg $location;
+    exit;
+elif ! $(sudo ls /etc/wireguard | grep -q $1); then
+    print_info "Profile not found.";
+    print_info "Fallback to default: $DEFAULT_LOCATION - $location";
+    connect-wg $location;
+    exit;
+# exact match
+elif ! $(sudo ls /etc/wireguard | grep -w $1); then
+    location=$(sudo ls /etc/wireguard | grep $1 | sed 's/.conf//' | shuf -n 1);
+    print_info "Connect to $location";
+    connect-wg $location;
+else
+    connect-wg $1;
+fi;
