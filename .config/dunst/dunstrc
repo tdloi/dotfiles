@@ -6,7 +6,7 @@
     monitor = 0
     follow = mouse
 
-    geometry = "300x10-30+20"
+    geometry = "350x15-30+20"
     shrink = no
     indicate_hidden = yes
     sort = yes
@@ -15,7 +15,7 @@
     notification_height = 0
     separator_height = 1
     separator_color = frame
-    padding = 8
+    padding = 12
     horizontal_padding = 8
     idle_threshold = 120
     frame_width = 2

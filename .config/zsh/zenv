@@ -27,15 +27,15 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 [ -s "$CARGO_HOME"/env ] && source "$CARGO_HOME"/env
+[ -d "$CARGO_HOME"/bin ] && export PATH="$CARGO_HOME"/bin:$PATH
 
 # golang
 export GOROOT="$XDG_CONFIG_HOME"/go
 export GOPATH="$XDG_DATA_HOME"/go
 export PATH="$XDG_CONFIG_HOME"/go/bin:$PATH
 
-# go
-export PATH=$PATH:"$XDG_CONFIG_HOME/go/bin"
-export GOPATH="$XDG_DATA_HOME"/go
+# VSCode
+export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME"/nvm
@@ -75,3 +75,6 @@ export FZF_DEFAULT_OPTS='
         --height 50% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Set default make
+export MAKEFLAGS="-j16"
