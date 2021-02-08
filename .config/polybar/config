@@ -48,17 +48,6 @@ cursor-scroll = ns-resize
 ; https://github.com/jaagr/polybar/wiki/Inter-process-messaging
 enable-ipc = true
 
-[module/i3]
-type = internal/i3
-pin-workspaces = true
-fuzzy-match = true
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-default = 
-
 label-focused-foreground = ${colors.black-alt}
 label-focused-background = ${colors.green}
 label-separator = |
@@ -66,25 +55,16 @@ label-separator-padding = 1
 label-focused-padding = 1
 
 
-[bar/tdloi-xubuntu]
-inherit = bar/tdloi
-monitor = ${env:MONITOR:HDMI-1}
-modules-left =
-modules-center = title
-modules-right = audio memory cpu date
-tray-position = left
-tray-maxsize = 24
-tray-detached = true
-tray-padding = 8
-
 [module/title]
 type = internal/xwindow
+
 
 [module/vpn]
 type = custom/script
 exec =  ~/.config/polybar/script/wg
 interval = 5
 label =  %output%
+
 
 [module/cmus-previous]
 type = custom/script
@@ -141,6 +121,7 @@ format-prefix-font = 4
 format-prefix-foreground = ${colors.grey}
 format-overline = #c63134
 
+
 [module/temperature]
 type = internal/temperature
 label =  %temperature-c%
@@ -149,11 +130,6 @@ label-warn =  %temperature-c%
 base-temperature = 20
 warn-temperature = 70
 
-[module/wired-network]
-type = internal/network
-interface = wlan0
-label-connected = %ifname%
-label-disconnected = not connected
 
 [module/wireless-network]
 type = internal/network
@@ -180,7 +156,7 @@ format-disconnected-foreground = ${colors.black}
 type = internal/battery
 battery = BAT0
 adapter = AC0
-full-at = 97
+full-at = 60
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>

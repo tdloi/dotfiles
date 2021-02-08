@@ -3,31 +3,14 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 
-powerlevel9k_python() {
-    if [ $(pyenv version-name) != 'system' ]; then
-        local pyenv="%{%F{black}%}${"$(pyenv version-name)":0:3}";
-        local virtualenv="\ue606 ";
-    fi;
-    [[ ! -z "$VIRTUAL_ENV" ]] && virtualenv="%{%F{yellow2}%}\ue606 "
-    echo -n $virtualenv$pyenv
-}
-POWERLEVEL9K_CUSTOM_PYTHON="powerlevel9k_python"
-POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="deepskyblue3"
+POWERLEVEL9K_PYTHON="powerlevel9k_python"
+POWERLEVEL9K_PYTHON_BACKGROUND="deepskyblue3"
 
-powerlevel9k_node() {
-    local nodever="$(nvm current)"
-    [ -n "$(ls -a package.json 2>/dev/null)" ] &&
-        if [ $nodever != "system" ]; then
-            echo "${nodever:0:-2} \ue718"
-        else
-            echo "\ue718"
-        fi;
-}
-POWERLEVEL9K_CUSTOM_NODE="powerlevel9k_node"
-POWERLEVEL9K_CUSTOM_NODE_BACKGROUND="lightgoldenrod1"
+POWERLEVEL9K_NODE="powerlevel9k_node"
+POWERLEVEL9K_NODE_BACKGROUND="lightgoldenrod1"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_node custom_python vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(node_version pyenv vcs vi_mode)
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""

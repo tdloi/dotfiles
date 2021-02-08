@@ -34,4 +34,3 @@ else:
     current = calculate_time(current)
 
     print(f'{name} ({current} / {duration})')
-

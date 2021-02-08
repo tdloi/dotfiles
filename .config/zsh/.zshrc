@@ -5,7 +5,6 @@ SAVEHIST=1000000
 source "$ZDOTDIR/zenv"
 source "$ZDOTDIR/zalias"
 source "$ZDOTDIR/zkey"
-source "$ZDOTDIR/.zzz"
 
 source "$ZDOTDIR/powerlevel9k.zsh"
 
