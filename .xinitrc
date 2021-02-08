@@ -9,4 +9,4 @@ fi
 
 # setxkbmap -option caps:escape
 # numlockx &
-# exec i3
+exec startxfce4
