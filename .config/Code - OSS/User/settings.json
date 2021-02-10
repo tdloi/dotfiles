@@ -14,8 +14,8 @@
     },
     "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
+    "workbench.sideBar.location": "right",
     "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
 
     "files.autoSave": "afterDelay",
     "explorer.openEditors.visible": 7,
@@ -109,10 +109,6 @@
         },
     ],
 
-    // gitlens
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
     "gitlens.keymap": "none",
     "git.terminalAuthentication": false,
 
