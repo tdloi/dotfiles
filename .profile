@@ -28,7 +28,7 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 setxkbmap -option caps:escape
-numlockx
+# numlockx
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx

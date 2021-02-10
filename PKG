@@ -47,6 +47,7 @@ nvidia-dkms
 nvidia-prime
 nvidia-settings
 nvidia-utils
+obs-studio
 p7zip
 papirus-icon-theme
 peek
@@ -58,6 +59,8 @@ rclone
 reflector
 rofi
 rustup
+s-tui
+systemd-resolvconf
 tmux
 transmission-qt
 ttf-inconsolata

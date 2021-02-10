@@ -7,7 +7,6 @@ alias aur='rm -rf * && git reset --hard HEAD && git pull'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias df='df -h'
-alias vol="amixer sget Master | awk -F'[][]' '/dB/ { print \$2 }'"
 
 # 3rd override native command
 [ -x "$(command -v exa)" ] && alias ls='exa'
@@ -24,6 +23,7 @@ alias dclean='d rmi $(d images -q --filter "dangling=true")'
 
 # javascript
 alias n='npm'
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 alias y='yarn'
 
 # git
@@ -38,10 +38,6 @@ alias wgd='wg-quick down $(wg show interfaces)'
 ### alias to change configs folder
 alias code='code --extensions-dir "$XDG_DATA_HOME"/vscode-oss/extensions'
 alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
-
-# keepassxc
-alias kb="keepassxc-cli"
-alias kbc="keepassxc-cli clip"
 
 alias print256='for i in {0..255} ; do
     printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"

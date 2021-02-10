@@ -7,7 +7,7 @@
 ## Scripts
 ### Package list
 ```bash
-comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base base-devel xorg xorg-apps | sort) > pacman
+comm -23 <(pacman -Qqen | sort) <(pacman -Qqeg base-devel xorg xorg-apps | sort) > PKG
 ```
 
 ## Packages
