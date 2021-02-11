@@ -16,6 +16,11 @@ print "Install packages"
 sudo pacman -S $(cat $CURRENT_DIR/PKG)
 
 
+print "Install pacman hooks"
+sudo mkdir -p /etc/pacman.d/hooks
+sudo cp /etc/pacman.d/hooks/* /etc/pacman.d/hooks
+
+
 print "Create folder Pictures/screenshots for Flameshot"
 mkdir -p ~/Pictures/screenshots
 

@@ -20,6 +20,11 @@ do
 done < xfce4/keyboard-shortcuts
 ```
 
+### Pacman Hooks
+- vscode: Change default extension location from home to .local/share/code-oss and updatet `product.json`
+
+
+
 ## Packages
 ### Xfce4
 - xfce4-power-manager

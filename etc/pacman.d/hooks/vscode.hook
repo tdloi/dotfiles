@@ -1,0 +1,16 @@
+# Set extensions folder to .local/share/code-oss
+# and update product.json (https://wiki.archlinux.org/index.php/Visual_Studio_Code#No_extensions_found)
+# This look like a mess because Exec does not allow line break
+# Using intermidate (productx.json) because the output file will be empty if jq read and write to a same file
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = code
+
+[Action]
+When = PostTransaction
+Depends = sed
+Depends = jq
+Exec = /bin/bash -c "sed -i 's/\/usr\/bin\/code-oss --no-sandbox/\/usr\/bin\/code-oss --extensions-dir .local\/share\/vscode-oss\/extensions --no-sandbox/g' /usr/share/applications/code-oss.desktop && jq '.extensionsGallery.serviceUrl=\"https://marketplace.visualstudio.com/_apis/public/gallery\" | .extensionsGallery.itemUrl=\"https://marketplace.visualstudio.com/items\" | .extensionsGallery.cacheUrl=\"https://vscode.blob.core.windows.net/gallery/index\"' /usr/lib/code/product.json > /usr/lib/code/productx.json && mv /usr/lib/code/productx.json /usr/lib/code/product.json"
