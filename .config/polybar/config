@@ -35,7 +35,7 @@ font-3 = Inconsolata:size=10;2
 
 modules-left = i3 vpn
 modules-center = cmus
-modules-right = cmus-previous cmus-next audio backlight memory cpu temperature wireless-network battery date
+modules-right = cmus-previous cmus-next audio backlight memory cpu temperature fan_speed wireless-network battery date
 
 ;Disable system tray
 tray-position = left
@@ -110,7 +110,7 @@ type = internal/memory
 format-prefix = "RAM: "
 format-prefix-font = 4
 format-prefix-foreground = ${colors.grey}
-format-overline = #8f70d4
+format-overline = #46dada
 
 
 [module/cpu]
@@ -125,10 +125,20 @@ format-overline = #c63134
 [module/temperature]
 type = internal/temperature
 label =  %temperature-c%
-label-overline = #46dada
 label-warn =  %temperature-c%
 base-temperature = 20
 warn-temperature = 70
+label-overline = #456771
+
+
+[module/fan_speed]
+type = custom/script
+exec = sensors | grep fan | awk '{print $2; exit}'
+format = <label>
+format-suffix = " RPM"
+format-suffix-font = 4
+format-suffix-foreground = ${colors.grey}
+format-overline = #8f70d4
 
 
 [module/wireless-network]
