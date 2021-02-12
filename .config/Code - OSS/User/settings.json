@@ -92,11 +92,7 @@
             "commands": [ "workbench.action.splitEditorUp", ]
         },
         {
-            "before": [ ":" ],
-            "commands": [ "workbench.action.showCommands", ]
-        },
-        {
-            "before": [ ";" ],
+            "before": [ "/" ],
             "commands": [ "workbench.action.showCommands", ]
         },
         {
@@ -118,10 +114,4 @@
 
     // javascript
     "javascript.updateImportsOnFileMove.enabled": "always",
-
-    // latex
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.bind.altKeymap.enabled": true,
-    "latex-workshop.intellisense.package.enabled": true,
-    "latex-workshop.latex.autoClean.run": "onBuilt",
 }
