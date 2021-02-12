@@ -51,6 +51,11 @@ setup_config() {
 
 
 config_xfce4() {
+    if [ -z $DISPLAY ]; then
+        echo "DISPLAY is not set. Abort configure Xfce4"
+        exit 0
+    fi;
+
     print "--- Restore XFCE4 shortcuts ---"
     while read line
     do
@@ -74,19 +79,19 @@ config_xfce4() {
         echo "Set icon theme to Papirus-Dark"
     echo "Download folder color change for Papirus"
     curl -sSL -o papirus-folders https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/v1.8.0/papirus-folders && \
-        chmod +x $CURRENT_DIR/papirus-folders && \
-        $CURRENT_DIR/papirus-folders -C bluegrey --theme Papirus-Dark && \
+        chmod +x $PWD/papirus-folders && \
+        $PWD/papirus-folders -C bluegrey --theme Papirus-Dark && \
         rm papirus-folders
     echo "Download Nerd fonts"
     mkdir -p ~/.local/share/fonts
     curl -sSL -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && \
-        unzip -o RobotoMono.zip -d ~/.local/share/fonts/RobotoMono && \
+        unzip -qo RobotoMono.zip -d ~/.local/share/fonts/RobotoMono && \
         rm RobotoMono.zip && \
     xfconf-query -c xfwm4 -p /general/title_font -s "Roboto 12" echo "Set title font to Roboto"
     echo "Download Breeze Hacked cursor"
     mkdir -p ~/.icons
     curl -sSL -O https://github.com/tdloi/breeze-hacked/releases/download/v0.1/Breeze_Hacked.zip && \
-        unzip -o Breeze_Hacked -d ~/.icons/ && \
+        unzip -qo Breeze_Hacked -d ~/.icons/ && \
         rm Breeze_Hacked.zip && \
     xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "Breeze_Hacked" && echo "Set cursor theme to Breeze Hacked"
 }
@@ -103,11 +108,6 @@ resilient_config() {
     # Copy scripts .local/bin
     mkdir -p ~/.local/bin
     cp $CURRENT_DIR/.local/bin/* ~/.local/bin
-    # Initialize and configure lightdm folder
-    sudo mkdir -p /var/lib/lightdm
-    sudo mkdir -p /var/lib/lightdm-data/$USER
-    sudo chown -R lightdm:lightdm /var/lib/lightdm
-    sudo chown -R lightdm:lightdm /var/lib/lightdm-data
 }
 
 
@@ -116,15 +116,14 @@ setup_system() {
     print "- Setup lightdm"
     sudo mkdir -p /etc/lightdm/
     sudo cp -r $CURRENT_DIR/etc/lightdm/* /etc/lightdm/
-
-    print "- Setup modprode"
-    sudo mkdir -p /etc/modprode.d/
-    sudo cp -r $CURRENT_DIR/etc/modprode.d/* /etc/modprode.d/
-
-    print "- Setup xorg conf"
-    sudo mkdir -p /etc/X11/xorg.conf.d/
-    sudo cp -r $CURRENT_DIR/etc/X11/xorg.conf.d/* /etc/X11/xorg.conf.d/
-    sudo mkinitcpio -P
+    sudo mkdir -p /var/lib/lightdm
+    sudo mkdir -p /var/lib/lightdm-data/$USER
+    sudo chown -R lightdm:lightdm /var/lib/lightdm
+    sudo chown -R lightdm:lightdm /var/lib/lightdm-data
+    # running test mode for lightdm init user
+    lightdm --test-mode --debug
+    sudo chown -R lightdm:lightdm /var/lib/lightdm-data
+    systemctl enable lightdm
 
     print "- Setup iwd"
     sudo mkdir -p /etc/iwd/
@@ -172,6 +171,13 @@ while test $# -gt 0; do
         show_help
         exit 0
         ;;
+    --all)
+        resilient_config
+        setup_config
+        setup_system
+        config_xfce4
+        exit 0
+        ;;
     --pkg)
         install_package
         shift
@@ -187,13 +193,6 @@ while test $# -gt 0; do
         ;;
     --xfce)
         resilient_config
-        config_xfce4
-        shift
-        ;;
-    --all)
-        resilient_config
-        setup_config
-        setup_system
         config_xfce4
         shift
         ;;
