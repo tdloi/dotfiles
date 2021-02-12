@@ -16,8 +16,8 @@ scroll_down     C-Down
 scroll_left     C-Left
 scroll_right    C-Right
 
-zoom_in         i   =
-zoom_out        o   -
+zoom_in         i
+zoom_out        o
 zoom_default    d
 zoom_fill       a
 zoom_fit        s

@@ -51,7 +51,7 @@ setup_config() {
 
 
 config_xfce4() {
-    if [ -z $DISPLAY ]; then
+    if [ -z "$DISPLAY" ]; then
         echo "DISPLAY is not set. Abort configure Xfce4"
         exit 0
     fi;
@@ -61,6 +61,11 @@ config_xfce4() {
     do
         key="$(echo $line | awk '{print $1}')"
         value="$(echo "$line" | awk '{$1=""; print $0}' | xargs)";
+
+        if [ "$key" = "/providers" ]; then
+            continue;
+        fi;
+
         xfconf-query -c xfce4-keyboard-shortcuts -p "$key" -s "$value" -n
         if [ ! $? -eq 0 ]; then
             if [ $value = 'true' ]; then
