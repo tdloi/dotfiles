@@ -20,7 +20,7 @@ export ELECTRON_TRASH=gio
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Ensure that zshenv will be sourced
-[ -f ~/.zshenv ] && . ~/.zshenv
+[[ -f ~/.zshenv ]] && source ~/.zshenv
 
 # include .bashrc if it exists
 if [ -f "$HOME/.bashrc" ]; then
