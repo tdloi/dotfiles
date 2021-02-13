@@ -1,9 +1,16 @@
-acpi_call
+acpi_call-dkms
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-hk-fonts
 adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-kr-fonts
+adobe-source-han-sans-otc-fonts
 adobe-source-han-sans-tw-fonts
+adobe-source-han-serif-cn-fonts
 adobe-source-han-serif-jp-fonts
+adobe-source-han-serif-kr-fonts
+adobe-source-han-serif-otc-fonts
+adobe-source-han-serif-tw-fonts
+adobe-source-sans-pro-fonts
 alacritty
 alsa-utils
 amd-ucode
@@ -28,8 +35,9 @@ firefox
 flameshot
 fzf
 git
+gnu-free-fonts
 gucharmap
-inkscape
+htop
 iwd
 jq
 keepassxc
@@ -49,6 +57,8 @@ nvidia-prime
 nvidia-settings
 nvidia-utils
 obs-studio
+otf-latin-modern
+otf-latinmodern-math
 p7zip
 papirus-icon-theme
 peek
