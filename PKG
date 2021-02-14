@@ -64,6 +64,7 @@ papirus-icon-theme
 peek
 piper
 plank
+playerctl
 postgresql-libs
 pulseaudio-alsa
 rclone
@@ -79,6 +80,7 @@ ttf-roboto
 unrar
 vim
 wireguard-tools
+xdotool
 xf86-video-amdgpu
 xfce4-power-manager
 xfce4-session

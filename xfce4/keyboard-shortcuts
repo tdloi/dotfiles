@@ -6,6 +6,9 @@
 /commands/custom/<Alt>Print                      
 /commands/custom/AudioLowerVolume                amixer -q set Master 5%-
 /commands/custom/AudioMute                       amixer -q set Master toggle
+/commands/custom/AudioNext                       playerctl next
+/commands/custom/AudioPlay                       playerctl play-pause
+/commands/custom/AudioPrev                       playerctl previous
 /commands/custom/AudioRaiseVolume                amixer -q set Master 5%+
 /commands/custom/HomePage                        
 /commands/custom/Launch4                         asusctl profile -n
