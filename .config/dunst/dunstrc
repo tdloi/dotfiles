@@ -16,13 +16,13 @@
     separator_height = 1
     separator_color = frame
     padding = 12
-    horizontal_padding = 8
+    horizontal_padding = 12
     idle_threshold = 120
     frame_width = 2
 
     ### Text ###
 
-    font = Fantasque Sans Mono 10
+    font = Fantasque Sans Mono 11
     line_height = 5
 
     markup = full # PangoMarkupFormat
@@ -41,8 +41,7 @@
     ### Icons ###
 
     icon_position = left
-    max_icon_size = 32
-    icon_path = ~/.icons/Pettanko/16x16/status/:~/.icons/Pettanko/16x16/devices/
+    max_icon_size = 36
 
     ### History ###
 
