@@ -1,0 +1,12 @@
+#!/bin/bash
+screen=$(xdotool getactivewindow getwindowgeometry | awk '/Geometry/{print $2}')
+resolution=$(xdpyinfo | awk '/dimensions/{print $2}')
+app=$(xdotool getactivewindow getwindowname)
+ 
+if [ "$screen" = "$resolution" ] && [ "$app" != "Desktop" ]; then
+    polybar-msg cmd hide > /dev/null
+else
+    polybar-msg cmd show > /dev/null
+fi
+
+echo ""

@@ -30,11 +30,11 @@ module-margin-right = 1
 
 font-0 = Inconsolata:size=11;2
 font-1 = RobotoMono Nerd Font:pixelsize=9;2
-font-2 = "Noto Sans CJK JP:size=9;3"
+font-2 = "Source Han Sans:size=10;2"
 font-3 = Inconsolata:size=10;2
 
-modules-left = i3 vpn
-modules-center = cmus
+modules-left = vpn fullscreen-listener
+modules-center = title cmus
 modules-right = cmus-previous cmus-next audio backlight memory cpu temperature fan_speed wireless-network battery date
 
 ;Disable system tray
@@ -57,6 +57,8 @@ label-focused-padding = 1
 
 [module/title]
 type = internal/xwindow
+format-font = 3
+label-maxlen = 120
 
 
 [module/vpn]
@@ -64,6 +66,14 @@ type = custom/script
 exec =  ~/.config/polybar/script/wg
 interval = 5
 label =  %output%
+
+
+; Autohide polybar when active window is fullscreen
+[module/fullscreen-listener]
+type = custom/script
+exec =  ~/.config/polybar/script/fullscreen-listener
+interval = 1
+label = %output%
 
 
 [module/cmus-previous]
