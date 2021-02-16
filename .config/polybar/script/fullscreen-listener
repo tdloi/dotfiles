@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# getactivewindow fail on startup
+if ! xdotool getactivewindow &> /dev/null; then
+    echo "";
+    exit 0;
+fi
+
 screen=$(xdotool getactivewindow getwindowgeometry | awk '/Geometry/{print $2}')
 resolution=$(xdpyinfo | awk '/dimensions/{print $2}')
 app=$(xdotool getactivewindow getwindowname)
