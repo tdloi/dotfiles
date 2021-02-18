@@ -11,6 +11,7 @@
 /commands/custom/AudioPrev                       playerctl previous
 /commands/custom/AudioRaiseVolume                amixer -q set Master 5%+
 /commands/custom/HomePage                        
+/commands/custom/Launch1                         discord
 /commands/custom/Launch4                         asusctl profile -n
 /commands/custom/MonBrightnessDown               brightnessctl s 5%-
 /commands/custom/MonBrightnessUp                 brightnessctl s +5%
@@ -117,12 +118,7 @@
 /xfwm4/custom/<Super>f                           maximize_window_key
 /xfwm4/custom/<Super>KP_Down                     tile_up_key
 /xfwm4/custom/<Super>KP_End                      tile_down_left_key
-/xfwm4/custom/<Super>KP_Home                     tile_up_left_key
-/xfwm4/custom/<Super>KP_Left                     tile_left_key
 /xfwm4/custom/<Super>KP_Next                     tile_down_right_key
-/xfwm4/custom/<Super>KP_Page_Up                  tile_up_right_key
-/xfwm4/custom/<Super>KP_Right                    tile_right_key
-/xfwm4/custom/<Super>KP_Up                       tile_down_key
 /xfwm4/custom/<Super>Left                        tile_left_key
 /xfwm4/custom/<Super>Right                       tile_right_key
 /xfwm4/custom/<Super>Tab                         switch_window_key

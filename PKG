@@ -33,9 +33,11 @@ fcitx5-unikey
 feh
 firefox
 flameshot
+foliate
 fzf
 git
 gnu-free-fonts
+go
 gucharmap
 htop
 iwd
@@ -50,7 +52,6 @@ mesa-demos
 mpv
 nemo
 nemo-fileroller
-nodejs
 ntp
 nvidia-dkms
 nvidia-prime
