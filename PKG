@@ -16,6 +16,7 @@ alsa-utils
 amd-ucode
 arc-gtk-theme
 base
+bdf-unifont
 brightnessctl
 chromium
 code
@@ -68,6 +69,7 @@ plank
 playerctl
 postgresql-libs
 pulseaudio-alsa
+python2
 rclone
 reflector
 rofi
@@ -76,6 +78,7 @@ s-tui
 systemd-resolvconf
 tmux
 transmission-qt
+ttf-hanazono
 ttf-inconsolata
 ttf-roboto
 unrar

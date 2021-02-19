@@ -110,6 +110,8 @@ resilient_config() {
     mkdir -p ~/Pictures/screenshots
     # Create folder cache for vim
     mkdir -p ~/.cache/vim/{swap,backup,undo}
+    # yarn
+    mkdir -p ~/.config/yarn
     # Copy scripts .local/bin
     mkdir -p ~/.local/bin
     cp $CURRENT_DIR/.local/bin/* ~/.local/bin
