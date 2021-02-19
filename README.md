@@ -43,3 +43,9 @@ done < xfce4/keyboard-shortcuts
 - nvidia-prime
 - nvidia-settings
 - nvidia-utils
+
+## Notes
+### Firefox dark mode
+Set those key in `about:config`:
+- `privacy.resistFingerprinting` to `false`
+- `ui.systemUsesDarkTheme` to `1` (optional)
