@@ -62,8 +62,10 @@
 /commands/default/XF86WWW                        exo-open --launch WebBrowser
 /providers                                       <<UNSUPPORTED>>
 /xfwm4/custom/<Alt>Delete                        
+/xfwm4/custom/<Alt>F10                           
 /xfwm4/custom/<Alt>F11                           fullscreen_key
 /xfwm4/custom/<Alt>F12                           above_key
+/xfwm4/custom/<Alt>F4                            
 /xfwm4/custom/<Alt>F6                            stick_window_key
 /xfwm4/custom/<Alt>F7                            move_window_key
 /xfwm4/custom/<Alt>F8                            resize_window_key
@@ -107,19 +109,24 @@
 /xfwm4/custom/<Primary><Shift><Alt>Left          move_window_left_key
 /xfwm4/custom/<Primary><Shift><Alt>Right         move_window_right_key
 /xfwm4/custom/<Primary><Shift><Alt>Up            move_window_up_key
-/xfwm4/custom/<Primary><Super>Down               tile_down_right_key
-/xfwm4/custom/<Primary><Super>Left               tile_down_left_key
-/xfwm4/custom/<Primary><Super>Right              tile_up_right_key
-/xfwm4/custom/<Primary><Super>Up                 tile_up_left_key
 /xfwm4/custom/Right                              right_key
 /xfwm4/custom/<Shift><Alt>Page_Down              lower_window_key
 /xfwm4/custom/<Shift><Alt>Page_Up                raise_window_key
 /xfwm4/custom/<Super>Down                        tile_down_key
+/xfwm4/custom/<Super>End                         tile_down_right_key
 /xfwm4/custom/<Super>f                           maximize_window_key
-/xfwm4/custom/<Super>KP_Down                     tile_up_key
-/xfwm4/custom/<Super>KP_End                      tile_down_left_key
-/xfwm4/custom/<Super>KP_Next                     tile_down_right_key
+/xfwm4/custom/<Super>Home                        tile_up_left_key
+/xfwm4/custom/<Super>KP_Down                     
+/xfwm4/custom/<Super>KP_End                      
+/xfwm4/custom/<Super>KP_Home                     
+/xfwm4/custom/<Super>KP_Left                     
+/xfwm4/custom/<Super>KP_Next                     
+/xfwm4/custom/<Super>KP_Page_Up                  
+/xfwm4/custom/<Super>KP_Right                    
+/xfwm4/custom/<Super>KP_Up                       
 /xfwm4/custom/<Super>Left                        tile_left_key
+/xfwm4/custom/<Super>Page_Down                   tile_down_left_key
+/xfwm4/custom/<Super>Page_Up                     tile_up_right_key
 /xfwm4/custom/<Super>Right                       tile_right_key
 /xfwm4/custom/<Super>Tab                         switch_window_key
 /xfwm4/custom/<Super>Up                          tile_up_key

@@ -60,7 +60,7 @@ config_xfce4() {
     while read line
     do
         key="$(echo $line | awk '{print $1}')"
-        value="$(echo "$line" | awk '{$1=""; print $0}' | xargs)";
+        value="$(echo "$line" | awk '{$1=""; print $0}' | sed 's/^ *//g')";
 
         if [ "$key" = "/providers" ]; then
             continue;
@@ -92,7 +92,10 @@ config_xfce4() {
     curl -sSL -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && \
         unzip -qo RobotoMono.zip -d ~/.local/share/fonts/RobotoMono && \
         rm RobotoMono.zip && \
-    xfconf-query -c xfwm4 -p /general/title_font -s "Roboto 12" echo "Set title font to Roboto"
+    curl -sSL -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && \
+        unzip -qo Hack.zip -d ~/.local/share/fonts/Hack && \
+        rm Hack.zip && \
+    xfconf-query -c xfwm4 -p /general/title_font -s "Inconsolata 14" echo "Set title font to Inconsolata"
     echo "Download Breeze Hacked cursor"
     mkdir -p ~/.icons
     curl -sSL -O https://github.com/tdloi/breeze-hacked/releases/download/v0.1/Breeze_Hacked.zip && \
