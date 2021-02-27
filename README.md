@@ -3,6 +3,7 @@
 - Theme: `arc-gtk-theme`
 - Icons: `papirus`
 - Cursor: [Breeze Hacked](https://github.com/tdloi/breeze-hacked)
+- XFWM theme: [Nanodesu](https://github.com/tdloi/nanodesu-xfwm4)
 
 ## Scripts
 ### Package list

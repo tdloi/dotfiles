@@ -87,18 +87,26 @@ config_xfce4() {
         chmod +x $PWD/papirus-folders && \
         $PWD/papirus-folders -C bluegrey --theme Papirus-Dark && \
         rm papirus-folders
-    echo "Download Nerd fonts"
+    echo "-----"
+    echo "Download Fonts"
     mkdir -p ~/.local/share/fonts
-    curl -sSL -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && \
+    echo "- Download RobotoMono"
+    curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && \
         unzip -qo RobotoMono.zip -d ~/.local/share/fonts/RobotoMono && \
         rm RobotoMono.zip && \
-    curl -sSL -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && \
+    echo "- Download Hack"
+    curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && \
         unzip -qo Hack.zip -d ~/.local/share/fonts/Hack && \
         rm Hack.zip && \
+    echo "- Download Casdadia Code"
+    curl -L -O https://github.com/microsoft/cascadia-code/releases/download/v2102.03/CascadiaCode-2102.03.zip && \
+        unzip -qo CascadiaCode-2102.03.zip -d ~/.local/share/fonts/CascadiaCode && \
+        rm CascadiaCode-2102.03.zip && \
     xfconf-query -c xfwm4 -p /general/title_font -s "Inconsolata 14" echo "Set title font to Inconsolata"
+    echo "-----"
     echo "Download Breeze Hacked cursor"
     mkdir -p ~/.icons
-    curl -sSL -O https://github.com/tdloi/breeze-hacked/releases/download/v0.1/Breeze_Hacked.zip && \
+    curl -L -O https://github.com/tdloi/breeze-hacked/releases/download/v0.1/Breeze_Hacked.zip && \
         unzip -qo Breeze_Hacked -d ~/.icons/ && \
         rm Breeze_Hacked.zip && \
     xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "Breeze_Hacked" && echo "Set cursor theme to Breeze Hacked"
@@ -118,6 +126,9 @@ resilient_config() {
     # Copy scripts .local/bin
     mkdir -p ~/.local/bin
     cp $CURRENT_DIR/.local/bin/* ~/.local/bin
+    # Update hwdb
+    sudo systemd-hwdb update
+    sudo udevadm trigger
 }
 
 
