@@ -49,3 +49,17 @@ done < xfce4/keyboard-shortcuts
 Set those key in `about:config`:
 - `privacy.resistFingerprinting` to `false`
 - `ui.systemUsesDarkTheme` to `1` (optional)
+
+### Zram
+Add zram to `/etc/fstab`
+```
+...
+/dev/zram0 none swap defaults 0 0
+/dev/zram1 none swap defaults 0 0
+/dev/zram2 none swap defaults 0 0
+/dev/zram3 none swap defaults 0 0
+/dev/zram4 none swap defaults 0 0
+/dev/zram5 none swap defaults 0 0
+/dev/zram6 none swap defaults 0 0
+/dev/zram7 none swap defaults 0 0
+```
