@@ -25,6 +25,7 @@
 /commands/custom/<Primary><Shift>Escape          
 /commands/custom/Print                           bash -c "flameshot full -p ~/Pictures/screenshots"
 /commands/custom/<Shift>Print                    bash -c "flameshot gui -p ~/Pictures/screenshots"
+/commands/custom/<Shift><Super>s                 xfce4-session-logout
 /commands/custom/<Shift><Super>s/startup-notify  true
 /commands/custom/Sleep                           xflock4
 /commands/custom/<Super>b                        exo-open --launch WebBrowser
