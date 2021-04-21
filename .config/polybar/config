@@ -33,7 +33,7 @@ font-1 = RobotoMono Nerd Font:pixelsize=9;2
 font-2 = "Source Han Sans:size=10;2"
 font-3 = Inconsolata:size=10;2
 
-modules-left = vpn fullscreen-listener
+modules-left = fullscreen-listener vpn player
 modules-center = title cmus
 modules-right = cmus-previous cmus-next audio backlight memory cpu temperature fan_speed wireless-network battery date
 
@@ -58,14 +58,24 @@ label-focused-padding = 1
 [module/title]
 type = internal/xwindow
 format-font = 3
-label-maxlen = 120
+label-maxlen = 90
 
 
 [module/vpn]
 type = custom/script
-exec =  ~/.config/polybar/script/wg
+exec =  echo $(curl -s https://am.i.mullvad.net/json) | jq -r '.country'
+exec-if = if [ -z $(wg show interfaces) ]; then false else true; fi
 interval = 5
 label =  %output%
+
+
+; Show current playing songs
+[module/player]
+type = custom/script
+exec =  echo Playing「 $(playerctl metadata xesam:title) 」
+exec-if = playerctl status -a | grep 'Playing'
+interval = 2
+label =  %output:0:25:...%
 
 
 ; Autohide polybar when active window is fullscreen
