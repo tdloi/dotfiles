@@ -35,7 +35,7 @@ setup_config() {
 
     print "Symlink config files"
     # symlink config
-    declare -a arr=("alacritty" "dunst" "fcitx5"
+    declare -a arr=("alacritty" "dunst" "fcitx5" "fusuma"
                     "fontconfig" "mpv" "polybar" "rofi"
                     "systemd" "tmux" "vim" "zsh"
                     )
@@ -129,6 +129,9 @@ resilient_config() {
     # Update hwdb
     sudo systemd-hwdb update
     sudo udevadm trigger
+
+    # Prevent Ruby creating .gem in home folder
+    sudo rm -rf /etc/gemrc
 }
 
 

@@ -29,27 +29,37 @@
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
-
     {
-        "key": "ctrl+/",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "!terminalFocus && !editorFocus"
+        "key": "ctrl+,",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
     },
-    {   // maximum terminal
+    {
+        "key": "ctrl+.",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    // Split
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    { // maximum terminal
         "key": "ctrl+/",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
-    },
-    {   // Change pannel to the right / bottom
-        "key": "ctrl+shift+/",
-        "command": "workbench.action.togglePanelPosition"
     },
     {
         "key": "ctrl+k",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
-
     {
         "key": "alt+j",
         "command": "editor.action.joinLines"
@@ -64,14 +74,9 @@
         "key": "tab",
         "command": "-acceptSelectedSuggestion"
     },
-
     // Zoom
     {
         "key": "ctrl+=",
-        "command": "editor.action.fontZoomIn"
-    },
-    {
-        "key": "ctrl+numpad_add",
         "command": "editor.action.fontZoomIn"
     },
     {
@@ -79,24 +84,18 @@
         "command": "editor.action.fontZoomOut"
     },
     {
-        "key": "ctrl+numpad_subtract",
-        "command": "editor.action.fontZoomOut"
-    },
-    {
-        "key": "ctrl+numpad0",
+        "key": "ctrl+shift+0",
         "command": "editor.action.fontZoomReset"
     },
-
-    {   // Zen mode
+    { // Zen mode
         "key": "shift+f11",
         "command": "workbench.action.toggleZenMode",
     },
-    {   // Toggle left menu bar
+    { // Toggle left menu bar
         "key": "f10",
         "command": "workbench.action.toggleActivityBarVisibility",
         "when": "!inDebugMode"
     },
-
     // Vim
     {
         "key": "capslock",
