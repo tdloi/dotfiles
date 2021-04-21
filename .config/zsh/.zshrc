@@ -5,10 +5,15 @@ SAVEHIST=1000000
 source "$ZDOTDIR/zenv"
 source "$ZDOTDIR/zalias"
 source "$ZDOTDIR/zkey"
-
 source "$ZDOTDIR/powerlevel9k.zsh"
 
-
+# Set symlink SSH socket to default location for tmux SSH working
+SOCK="/run/user/$UID/ssh-agent.socket"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    rm -f $SOCK
+    ln -sf $SSH_AUTH_SOCK $SOCK
+fi
 
 ### setopt
 setopt append_history         # Allow multiple terminal sessions to all append to one zsh command history
