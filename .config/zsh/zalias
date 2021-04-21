@@ -14,7 +14,10 @@ alias df='df -h'
 # python
 alias py='python'
 alias pips='pipenv shell'
-alias venv='[[ -d "venv" ]] && source venv/bin/activate; [[ -d "env" ]] && source env/bin/activate'
+alias venv='[[ -d "venv" ]] && source venv/bin/activate; [[ -d ".venv" ]] && source .venv/bin/activate; [[ -d "env" ]] && source env/bin/activate'
+
+# rust
+alias c='cargo'
 
 # docker
 alias d='docker'
@@ -37,7 +40,6 @@ alias wgd='wg-quick down $(wg show interfaces)'
 
 ### alias to change configs folder
 alias code='code --extensions-dir "$XDG_DATA_HOME"/vscode-oss/extensions'
-alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
 
 alias print256='for i in {0..255} ; do
     printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
