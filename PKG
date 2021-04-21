@@ -17,6 +17,7 @@ amd-ucode
 arc-gtk-theme
 base
 bdf-unifont
+blueberry
 brightnessctl
 chromium
 code
@@ -50,6 +51,8 @@ lightdm-webkit-theme-litarvan
 light-locker
 linux
 linux-firmware
+linux-zen
+linux-zen-headers
 mesa-demos
 mpv
 nemo
@@ -63,6 +66,7 @@ obs-studio
 otf-latin-modern
 otf-latinmodern-math
 p7zip
+pacman-contrib
 papirus-icon-theme
 peek
 piper
@@ -74,11 +78,13 @@ python2
 rclone
 reflector
 rofi
+ruby
 rustup
 s-tui
 systemd-resolvconf
 tmux
 transmission-qt
+tree
 ttf-hanazono
 ttf-inconsolata
 ttf-roboto

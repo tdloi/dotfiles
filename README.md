@@ -35,7 +35,6 @@ done < xfce4/keyboard-shortcuts
 - xfwm4
 
 ### Zephyrus G14
-- linux-zen-g14<sup><sup>AUR<sup><sup>
 - asus-nb-ctrl-git<sup><sup>AUR<sup><sup>
 - acpi_call: Fan mode
 - amd-ucode
@@ -63,4 +62,9 @@ Add zram to `/etc/fstab`
 /dev/zram5 none swap defaults 0 0
 /dev/zram6 none swap defaults 0 0
 /dev/zram7 none swap defaults 0 0
+```
+### Fusuma
+```bash
+gem install rdoc
+gem install fusuma
 ```
